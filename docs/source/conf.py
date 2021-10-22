@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Open Raven Research'
+copyright = '2021, Open Raven'
+author = 'Open Raven Resarch Team'
 
 release = '0.1'
 version = '0.1.0'
