@@ -4,7 +4,7 @@
 
 project = 'Open Raven Research'
 copyright = '2021, Open Raven'
-author = 'Open Raven Resarch Team'
+author = 'Open Raven Research Team'
 
 release = '0.1'
 version = '0.1.0'
