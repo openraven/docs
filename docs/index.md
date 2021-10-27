@@ -1,24 +1,18 @@
 ## Introduction 
 This is the technical documentation site for our open source projects.  
 
-You can find out more about the research team at [https://openraven.com/research](https://www.openraven.com/research) where you will also find additional tutorials, research papers and other technical material. We run an open [Slack Workspace](https://join.slack.com/t/open-raven-research/shared_invite/zt-np27xiev-N5rL4AcTmrQt8YkE81BIaw) to provide updates on work, ask questions and share ideas.
+You can find out more about the team at [https://openraven.com/research](https://www.openraven.com/research) where there are additional tutorials, and security research papers.
 
-All code for these projects can be found at [https://github.com/openraven](https://github.com/openraven) where we release all open source code under an [Apache 2.0 license](https://choosealicense.com/licenses/apache-2.0/).
+We run an open [Slack Workspace](https://join.slack.com/t/open-raven-research/shared_invite/zt-np27xiev-N5rL4AcTmrQt8YkE81BIaw) where you can to track our work, ask questions and share your ideas.
 
-## Core Projects
-### Magpie
-Magpie is a cloud security analysis tool that is going beyond traditional CSPM. Written in Java and architected to be deployed and operate at scale, Magpie will discover the services running in your cloud accounts and then run security configuration checks against security best practices and against compliance standards like the CIS Benchmarks and the PCI DSS. The focused of attention in Magpie development is going "beyond CSPM", meaning advancing into advanced attack pattern modelling that we beleive more accurately represents todays threat landscape. Magpie supports AWS and GCP. 
+We release all code at [https://github.com/openraven](https://github.com/openraven) and release our projects under an [Apache 2.0 license](https://choosealicense.com/licenses/apache-2.0/).
 
-The Magpie repo is [https://github.com/openraven/magpie](https://github.com/openraven/magpie). 
+## Projects
+While we are always working on a number of software ideas for the company that may or may not become open-source projects, our primary project that is actively developed and maintained is [Magpie](Projects/Magpie/getting-started.md).
 
-The security rules repo is [https://github.com/openraven/security-rules](https://github.com/openraven/security-rules).
+Magpie is the open source core of our commercial product that performs cloud service discovery, non-native data store discovery and cloud security configuration analysis. This is generally referred to as Cloud Security Posture Management or CSPM, although Magpie is going beyond CSPM and configuration analysis to provide a discovery engine and security rules engine suitable for the modern threat landscape like cloud ransomware and supply chain issues. 
 
-Remediation advice can be found in our [Cloud Security Configuration Guide](Cloud Configuration Guides/guides.md).
-
-### MockingBird
-
-### User Guides
-
+We also maintain a set of Cloud Security Configuration Guides that explain how to fix security issues that have been identified by [Magpie](Projects/Magpie/getting-started.md).
 
 ## How to Contribute
 We encourage and welcome [community contributions](Developer Docs/contribution-guide.md) to our projects and [documentation](https://github.com/openraven/docs). We do maintain a [community code of conduct](Developer Docs/welcome.md).

@@ -2,3 +2,12 @@ site_name:  Open Raven Open Source
 site_url: https://opensource.openraven.com
 theme:
   name: material
+  palette:
+    primary: black
+  features:
+    - navigation.instant
+    - navigation.tracking
+ #   - navigation.tabs
+  logo: assets/logo.png
+  font:
+    text: DMSans

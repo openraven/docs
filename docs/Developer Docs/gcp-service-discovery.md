@@ -1,0 +1,65 @@
+#### GCP
+Magpie also supports GCP as a core plugin out of the box. Checked boxes are complete and available today, the unchecked are on the roadmap for completion.
+
+- [x]  AI Platform Data Labeling Service
+- [x]  Access Approval
+- [x]  AutoML
+- [x]  BigQuery
+- [ ]  BigQuery Connection API
+- [x]  BigQuery Data Transfer Service
+- [x]  BigQuery Reservation API
+- [ ]  BigQuery Storage
+- [x]  Cloud Asset Inventory
+- [x]  Cloud Bigtable
+- [x]  Cloud Billing
+- [x]  Cloud Build
+- [x]  Cloud Data Loss Prevention
+- [x]  Cloud DNS
+- [x]  Cloud Functions
+- [x]  Cloud Key Management Service
+- [x]  Cloud Logging
+- [x]  Cloud Monitoring
+- [x]  Cloud Monitoring Dashboards
+- [ ]  Cloud Natural Language API
+- [x]  Cloud OS Config
+- [ ]  Cloud OS Login API
+- [x]  Cloud Spanner
+- [x]  Cloud Scheduler
+- [x]  Cloud Storage
+- [x]  Cloud Talent Solution Job Search
+- [x]  Cloud Tasks
+- [x]  Cloud Trace
+- [x]  Cloud Translation
+- [x]  Cloud Vision
+- [x]  Compute Engine
+- [x]  Container Analysis
+- [x]  Data Catalog
+- [x]  Dataproc
+- [ ]  Datastore
+- [x]  Dialogflow
+- [x]  Error Reporting
+- [ ]  Firestore
+- [x]  Game Servers
+- [x]  Google Kubernetes Engine
+- [x]  Identity and Access Management
+- [x]  Iam
+- [x]  IoT Core
+- [ ]  Media Translation
+- [x]  Memorystore for Memcached
+- [x]  Memorystore for Redis
+- [ ]  Phishing Protection
+- [x]  Pub/Sub
+- [x]  Pub/Sub Lite
+- [ ]  Recommendations AI
+- [ ]  Recommender
+- [x]  Resource Manager
+- [x]  Secret Manager
+- [ ]  Security Command Center
+- [x]  Service Directory
+- [ ]  Speech-to-Text
+- [ ]  Text-to-Speech
+- [ ]  Video Intelligence API
+- [x]  VPC
+- [ ]  Web Risk
+- [x]  Web Security Scanner
+- [x]  reCAPTCHA Enterprise
