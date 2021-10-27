@@ -47,9 +47,9 @@ each layer may exist on separate compute instances.
 
 ### Clone and build Magpie
 ```shell
-git clone git@github.com:openraven/magpie.git
-cd magpie
-mvn clean package install && mvn --projects magpie-cli assembly:single
+git clone git@github.com:openraven/Projects.git
+cd Projects
+mvn clean package install && mvn --projects Projects-cli assembly:single
 ```
 
 The distribution zip file will be located in `magpie-cli/target/magpie-<version>.zip`
@@ -66,7 +66,7 @@ AWS plugin utilizes the AWS Java SDK and will search for credentials as describe
 
 Assuming you have read credentials set up, you can start discovery by running:
 ```shell
-./magpie
+./Projects
 ```
 ### DMAP
 Runing `magpie-dmap` requires that DMAP-Predictions be running locally.  The easiest way is through Docker:
@@ -91,7 +91,7 @@ Magpie allows for complex configurations to be enabled via the YAML-based config
 The simplest Magpie configuration is shown below. This configuration enables AWS discovery with a JSON output to `stdout`. To write to a file
 simply redirect the output:
 ```shell
-./magpie > output.json
+./Projects > output.json
 ```
 Log messages are printed to `stderr` and will still show up as console output.
 
@@ -102,12 +102,12 @@ layers:
     type: origin
     queue: default
     plugins:
-      - magpie.aws.discovery
+      - Projects.aws.discovery
   output:
     type: terminal
     dequeue: default
     plugins:
-      - magpie.json
+      - Projects.json
 fifos:
   default:
     type: local
@@ -135,14 +135,14 @@ named `MAGPIE_CONFIG` and with a specially formed JSON object or array. For exam
 with the default configuration:
 
 ```bash
-> MAGPIE_CONFIG="{'/plugins/magpie.aws.discovery/config/services': ['s3']}" ./magpie
+> MAGPIE_CONFIG="{'/plugins/magpie.aws.discovery/config/services': ['s3']}" ./Projects
 ```
 The value of `MAGPIE_CONFIG` must be a JSON object where the key is a [JSON Pointer](https://tools.ietf.org/html/rfc6901)
 and the value is legal JSON which should be inserted into the location referenced by the pointer.
 
 In the case where multiple overrides are required you may instead use an array of the above formatted objects as such:
 ```bash
-> MAGPIE_CONFIG="[{'/plugins/magpie.aws.discovery/enabled', false }, {'/plugins/magpie.aws.discovery/config/services': ['s3']}]" ./magpie
+> MAGPIE_CONFIG="[{'/plugins/magpie.aws.discovery/enabled', false }, {'/plugins/magpie.aws.discovery/config/services': ['s3']}]" ./Projects
 ```
 
 #### Multiple Overrides
@@ -152,7 +152,7 @@ will be applied in Java's natural String ordering (lexicographic).  For example:
 ```bash
 > export MAGPIE_CONFIG_1="[...]"
 > export MAGPIE_CONFIG_2="[...]"
-> ./magpie
+> ./Projects
 ```
 Both variables will be applied, if any duplicate JSON Pointers are provided the last one applied will win.
 
@@ -170,7 +170,7 @@ For example: to pass environmental variables for both credentials and configurat
 docker run -a stdout -a stderr \
 --env MAGPIE_CONFIG="{'/plugins/magpie.aws.discovery/config/services': ['s3']}" \
 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
-quay.io/openraven/magpie:latest
+quay.io/openraven/Projects:latest
 ```
 
 The two `-a` arguments map both `stdout` and `stderr` to your local terminals, so you can redirect output as you would
