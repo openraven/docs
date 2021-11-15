@@ -54,7 +54,7 @@ credentials as needed. Magpie will create all required tables at startup.
 
 ```yaml
 magpie.persist:
-    enabled: false
+    enabled: true
     config:
         hostname: localhost
         port: 5432
