@@ -29,6 +29,13 @@ default config and provides no AWS credentials.
 
 - Credentials can be added at runtime via volume mapping or passing environmental variables into the container.
 - Configuration overrides can be done via environmental variable.
+- Ensure AWS_REGION is set in your AWS Configuration otherwise you will receive 
+
+```
+Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)
+```
+
+- Use MAGPIE_CONFIG environment variable to configure the plugins and regions you want to execute. See configuration section for more details
 
 For example: to pass environmental variables for both credentials and configuration:
 ```bash
