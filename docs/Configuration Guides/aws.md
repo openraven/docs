@@ -4,6 +4,8 @@ The documentation that follows provides guidance on how to remediate any securit
 
 **Avoid the use of the "root" account (1.1)**
 
+
+
 The "root" account has unrestricted access to all resources in the AWS account.
 
 It is recommended that the use of this account be avoided.

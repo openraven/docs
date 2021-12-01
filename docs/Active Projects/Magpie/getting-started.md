@@ -20,7 +20,7 @@ AWS plugin utilizes the AWS Java SDK and will search for credentials as describe
 
 Assuming you have read credentials set up, you can start discovery by running:
 ```shell
-./Projects
+./Active Projects
 ```
 ### Running via Docker
 Builds on the `main` branch are automatically uploaded to quay.io under the `latest` tag.  See https://quay.io/repository/openraven/magpie for
@@ -35,7 +35,7 @@ For example: to pass environmental variables for both credentials and configurat
 docker run -a stdout -a stderr \
 --env MAGPIE_CONFIG="{'/plugins/magpie.aws.discovery/config/services': ['s3']}" \
 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
-quay.io/openraven/Projects:latest
+quay.io/openraven/Active Projects:latest
 ```
 
 The two `-a` arguments map both `stdout` and `stderr` to your local terminals, so you can redirect output as you would

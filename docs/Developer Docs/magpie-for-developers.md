@@ -18,14 +18,14 @@ AWS plugin utilizes the AWS Java SDK and will search for credentials as describe
 
 Assuming you have read credentials set up, you can start discovery by running:
 ```shell
-./Projects
+./Active Projects
 ```
 
 ## Building Magpie from Source
 ```shell
-git clone git@github.com:openraven/Projects.git
-cd Projects
-mvn clean package install && mvn --projects Projects-cli assembly:single
+git clone git@github.com:openraven/Active Projects.git
+cd Active Projects
+mvn clean package install && mvn --projects Active Projects-cli assembly:single
 ```
 
 The distribution zip file will be located in `magpie-cli/target/magpie-<version>.zip`
