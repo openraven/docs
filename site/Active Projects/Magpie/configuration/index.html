@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://opensource.openraven.com/Active%20Projects/Magpie/configuration/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Configuration - Open Raven Open Source</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Open Raven Open Source</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../apache-license/" class="nav-link">Apache license</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../contribution-guide/" class="nav-link">Contribution guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../security-policy/" class="nav-link">Security policy</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Active Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Magpie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Policy-and-Rules-Identifiers/" class="dropdown-item">Policy and Rules Identifiers</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Configuration</a>
+</li>
+            
+<li>
+    <a href="../dmap-extension/" class="dropdown-item">Dmap extension</a>
+</li>
+            
+<li>
+    <a href="../getting-started/" class="dropdown-item">Getting started</a>
+</li>
+            
+<li>
+    <a href="../rules-writing/" class="dropdown-item">Rules writing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Mockingbird</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Mockingbird/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configuration Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws-security/" class="dropdown-item">Aws security</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws/" class="dropdown-item">Aws</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/cloud-taxonomy/" class="dropdown-item">Cloud taxonomy</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/gcp/" class="dropdown-item">Gcp</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/guides/" class="dropdown-item">Guides</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Docs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Developer%20Docs/GCP-discovery-plugin/" class="dropdown-item">GCP Client dependencies</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/aws-service-discovery/" class="dropdown-item">Aws service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/gcp-service-discovery/" class="dropdown-item">Gcp service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/magpie-for-developers/" class="dropdown-item">Magpie for developers</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/welcome/" class="dropdown-item">Welcome</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Policy-and-Rules-Identifiers/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../dmap-extension/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="configuration">Configuration</h3>
+<p>Magpie allows for complex configurations to be enabled via the YAML-based config file.  This file has 3 primary sections:</p>
+<ul>
+<li><strong>Layers</strong>: each of which contain 1 or more plugins and are surrounded by at least 1 FIFO</li>
+<li><strong>FIFOs</strong>: which are either local (in-process Java queues) or Kafka queues</li>
+<li><strong>Plugins</strong>: Each running plugin must be explictly.  A plugin-specific configuration object may reside in the <code>config</code> subsection.</li>
+</ul>
+<p>The simplest Magpie configuration is shown below. This configuration enables AWS discovery with a JSON output to <code>stdout</code>. To write to a file
+simply redirect the output:</p>
+<pre><code class="language-shell">./Active Projects &gt; output.json
+</code></pre>
+<p>Log messages are printed to <code>stderr</code> and will still show up as console output.</p>
+<p>The simplest configuration:</p>
+<pre><code class="language-yaml">layers:
+  enumerate:
+    type: origin
+    queue: default
+    plugins:
+      - Active Projects.aws.discovery
+  output:
+    type: terminal
+    dequeue: default
+    plugins:
+      - Active Projects.json
+fifos:
+  default:
+    type: local
+plugins:
+  magpie.aws.discovery:
+    enabled: true
+    config:
+  magpie.json:
+    enabled: true
+    config:
+  magpie.persist:
+    enabled: false
+    config:
+      hostname: localhost
+      port: 5432
+      databaseName: db_name
+      user: postgres
+      password: postgres
+</code></pre>
+<h3 id="saving-data-to-postgresql">Saving data to PostgreSQL</h3>
+<p>By default, Magpie prints all discovered resources to standard out in JSON format. It's possible to modify this behaviour by changing
+the default configuration.  The Magpie Peristence plugin comes bundled with Magpie but is in the disabled state by default.  To 
+enable it  look at the following lines in the config file (config.yaml). set <code>enabled: true</code> and then modify the login
+credentials as needed. Magpie will create all required tables at startup.</p>
+<pre><code class="language-yaml">magpie.persist:
+    enabled: false
+    config:
+        hostname: localhost
+        port: 5432
+        databaseName: db_name
+        user: postgres
+        password: postgres
+</code></pre>
+<h4 id="overriding-configyaml">Overriding config.yaml</h4>
+<p>It is possible to override <em>most</em> configuration values via environmental variables. This is most useful as an easy way to
+script a Magpie instance on a one-per-aws-service basis.  To override configuration values, set an environmental variable
+named <code>MAGPIE_CONFIG</code> and with a specially formed JSON object or array. For example, to perform an S3 <em>only</em> scan using
+with the default configuration:</p>
+<pre><code class="language-bash">&gt; MAGPIE_CONFIG=&quot;{'/plugins/magpie.aws.discovery/config/services': ['s3']}&quot; ./Active Projects
+</code></pre>
+<p>The value of <code>MAGPIE_CONFIG</code> must be a JSON object where the key is a <a href="https://tools.ietf.org/html/rfc6901">JSON Pointer</a>
+and the value is legal JSON which should be inserted into the location referenced by the pointer.</p>
+<p>In the case where multiple overrides are required you may instead use an array of the above formatted objects as such:</p>
+<pre><code class="language-bash">&gt; MAGPIE_CONFIG=&quot;[{'/plugins/magpie.aws.discovery/enabled', false }, {'/plugins/magpie.aws.discovery/config/services': ['s3']}]&quot; ./Active Projects
+</code></pre>
+<h4 id="multiple-overrides">Multiple Overrides</h4>
+<p>If you have multiple values to set it may be easier to set multiple override variables instead of attempting to fit it
+in a single env var.  Magpie will accept any and all environmental variables that match the regex <code>MAGPIE_CONFIG.*</code>. They
+will be applied in Java's natural String ordering (lexicographic).  For example:</p>
+<pre><code class="language-bash">&gt; export MAGPIE_CONFIG_1=&quot;[...]&quot;
+&gt; export MAGPIE_CONFIG_2=&quot;[...]&quot;
+&gt; ./Active Projects
+</code></pre>
+<p>Both variables will be applied, if any duplicate JSON Pointers are provided the last one applied will win.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

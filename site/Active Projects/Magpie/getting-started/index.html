@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://opensource.openraven.com/Active%20Projects/Magpie/getting-started/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Getting started - Open Raven Open Source</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Open Raven Open Source</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../apache-license/" class="nav-link">Apache license</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../contribution-guide/" class="nav-link">Contribution guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../security-policy/" class="nav-link">Security policy</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Active Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Magpie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Policy-and-Rules-Identifiers/" class="dropdown-item">Policy and Rules Identifiers</a>
+</li>
+            
+<li>
+    <a href="../configuration/" class="dropdown-item">Configuration</a>
+</li>
+            
+<li>
+    <a href="../dmap-extension/" class="dropdown-item">Dmap extension</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Getting started</a>
+</li>
+            
+<li>
+    <a href="../rules-writing/" class="dropdown-item">Rules writing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Mockingbird</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Mockingbird/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configuration Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws-security/" class="dropdown-item">Aws security</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws/" class="dropdown-item">Aws</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/cloud-taxonomy/" class="dropdown-item">Cloud taxonomy</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/gcp/" class="dropdown-item">Gcp</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/guides/" class="dropdown-item">Guides</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Docs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Developer%20Docs/GCP-discovery-plugin/" class="dropdown-item">GCP Client dependencies</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/aws-service-discovery/" class="dropdown-item">Aws service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/gcp-service-discovery/" class="dropdown-item">Gcp service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/magpie-for-developers/" class="dropdown-item">Magpie for developers</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/welcome/" class="dropdown-item">Welcome</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../dmap-extension/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../rules-writing/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#magpie" class="nav-link">Magpie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#prereqs" class="nav-link">Prereqs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="magpie">Magpie</h2>
+<p>Magpie is a free, open-source framework and a collection of community developed plugins that can be used to build complete end-to-end security tools such as a CSPM or Cloud Security Posture Manager. The project was originally created and is maintained by Open Raven. We build commercial cloud native data security tools and in doing so have learned a great deal about how to discover AWS assets and their security settings at scale.</p>
+<p>We also heard that many people were frustrated with their existing security tools that couldn't be extended  and couldn't work well with their other systems, so decided to create this Magpie framework and refactor and sync our core AWS commercial discovery code as the first plugin.</p>
+<p>We plan to actively contribute additional modules to make Magpie a credible free open source alternative to commercial CSPM’s and welcome the community to join us in adding to the framework and building plugins.</p>
+<p>Magpie also contains Open Raven's DMAP technology, which allows users to enumerate and identify <em>non native</em> services running on EC2 instances using a combination of port fingerprinting (think Nmap's OS fingerprinting, but on the application layer instead of the transport layer) and a little machine learning (decision trees).</p>
+<h2 id="overview">Overview</h2>
+<h2 id="prereqs">Prereqs</h2>
+<p><em>Java 11 is a prerequisite and must be installed to run Magpie.</em></p>
+<p>Out of the box Magpie supports AWS for the cloud provider and outputs discovery data to <code>stdout</code> in JSON format. The
+AWS plugin utilizes the AWS Java SDK and will search for credentials as described in <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/credentials.html">Using Credentials</a>.</p>
+<p>Assuming you have read credentials set up, you can start discovery by running:</p>
+<pre><code class="language-shell">./Active Projects
+</code></pre>
+<h3 id="running-via-docker">Running via Docker</h3>
+<p>Builds on the <code>main</code> branch are automatically uploaded to quay.io under the <code>latest</code> tag.  See https://quay.io/repository/openraven/magpie for
+all available tags. Once a stable public release is made this will also be available there.  The Docker image uses the
+default config and provides no AWS credentials.</p>
+<ul>
+<li>Credentials can be added at runtime via volume mapping or passing environmental variables into the container.</li>
+<li>Configuration overrides can be done via environmental variable.</li>
+</ul>
+<p>For example: to pass environmental variables for both credentials and configuration:</p>
+<pre><code class="language-bash">docker run -a stdout -a stderr \
+--env MAGPIE_CONFIG=&quot;{'/plugins/magpie.aws.discovery/config/services': ['s3']}&quot; \
+-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
+quay.io/openraven/Active Projects:latest
+</code></pre>
+<p>The two <code>-a</code> arguments map both <code>stdout</code> and <code>stderr</code> to your local terminals, so you can redirect output as you would
+with a local Mapgie execution.</p>
+<h3 id="plugins">Plugins</h3>
+<h3 id="community-contributed-plugins">Community Contributed Plugins</h3>
+<p>If you've written a plugin you'd like listed please create a Pull Request with it listed here.</p>
+<h5 id="authentcation">Authentcation</h5>
+<p>To use this plugin save .json file with authentication key to file then set environment variable:</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=PATH_TO_CREDENTIALS_JSON_FILE
+</code></pre>
+<p>The Magpie repo is <a href="https://github.com/openraven/magpie">https://github.com/openraven/magpie</a>. </p>
+<p>The security rules repo is <a href="https://github.com/openraven/security-rules">https://github.com/openraven/security-rules</a>.</p>
+<p>Remediation advice can be found in our <a href="Cloud Configuration Guides/guides.md">Cloud Security Configuration Guide</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

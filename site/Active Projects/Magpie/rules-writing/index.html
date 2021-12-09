@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://opensource.openraven.com/Active%20Projects/Magpie/rules-writing/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Rules writing - Open Raven Open Source</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Open Raven Open Source</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../apache-license/" class="nav-link">Apache license</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../contribution-guide/" class="nav-link">Contribution guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../security-policy/" class="nav-link">Security policy</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Active Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Magpie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Policy-and-Rules-Identifiers/" class="dropdown-item">Policy and Rules Identifiers</a>
+</li>
+            
+<li>
+    <a href="../configuration/" class="dropdown-item">Configuration</a>
+</li>
+            
+<li>
+    <a href="../dmap-extension/" class="dropdown-item">Dmap extension</a>
+</li>
+            
+<li>
+    <a href="../getting-started/" class="dropdown-item">Getting started</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Rules writing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Mockingbird</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Mockingbird/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configuration Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws-security/" class="dropdown-item">Aws security</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/aws/" class="dropdown-item">Aws</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/cloud-taxonomy/" class="dropdown-item">Cloud taxonomy</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/gcp/" class="dropdown-item">Gcp</a>
+</li>
+                                    
+<li>
+    <a href="../../../Configuration%20Guides/guides/" class="dropdown-item">Guides</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Docs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Developer%20Docs/GCP-discovery-plugin/" class="dropdown-item">GCP Client dependencies</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/aws-service-discovery/" class="dropdown-item">Aws service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/gcp-service-discovery/" class="dropdown-item">Gcp service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/magpie-for-developers/" class="dropdown-item">Magpie for developers</a>
+</li>
+                                    
+<li>
+    <a href="../../../Developer%20Docs/welcome/" class="dropdown-item">Welcome</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../getting-started/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Mockingbird/getting-started/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#policies-and-rules-directory-todo" class="nav-link">Policies and rules directory (@TODO)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#writing-policies-and-rules" class="nav-link">Writing policies and rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#testing-security-rules" class="nav-link">Testing security rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#how-to-guides-for-fixing-cloud-security-issues" class="nav-link">How-to guides for fixing cloud security issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Welcome to the <a href="https://www.openraven.com/research">Open Raven Research</a> wiki for all things related to the <a href="https://github.com/openraven/security-rules">security rules</a> that power <a href="https://github.com/openraven/magpie">Magpie</a> and are incorporated in the Open Raven commercial platform.</p>
+<p>The wiki includes documentation about how to write policies and rules as well as a section of curated guides about how to fix problems that may have been identified after running an analysis.</p>
+<p>We also maintain a current directory page listing all the rules hosted in this repo and a section listing other public repos that share rules.</p>
+<h2 id="policies-and-rules-directory-todo">Policies and rules directory (@TODO)</h2>
+<h2 id="writing-policies-and-rules">Writing policies and rules</h2>
+<h3 id="policy-and-rules-overview">Policy and Rules overview</h3>
+<p>Policies and rules consist of crafted YAML files within a Git repository, one file per policy or rule.</p>
+<h4 id="policy-fields">Policy Fields</h4>
+<p>Policies contain the following fields. All fields are required unless specifically marked optional.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Sample</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>policyId</td>
+<td>string</td>
+<td>A unique identifier provided by Open Raven</td>
+<td><code>opnrvn-p-1</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>policyName</td>
+<td>string</td>
+<td>Human readable title for the policy</td>
+<td><code>AWS Security Best Practices</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>cloudProvider</td>
+<td>enum</td>
+<td>The provider this policy should be applied against.</td>
+<td><code>aws</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>A sentence-long description of the policy</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Whether this policy should be applied when run in Magpie</td>
+<td><code>true</code></td>
+<td>optional, default to true</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>array of strings</td>
+<td>Rule filenames (the <code>/rules</code> path is implied)</td>
+<td><code>- opnrvn-r-1.yaml</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>Version number for the policy</td>
+<td><code>0.9</code></td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rule-fields">Rule Fields</h4>
+<p>Rules contain the following fields. All fields are required unless specifically marked optional.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Sample</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ruleId</td>
+<td>string</td>
+<td>A numerically increasing serial following the defined naming format</td>
+<td><code>opnrvn-r-12</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>type</td>
+<td>enum</td>
+<td>Currently only one type is supported (asset)</td>
+<td><code>asset</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>ruleName</td>
+<td>string</td>
+<td>Human readable title for the rule</td>
+<td><code>AWS security group allows access to known command and control destinations</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>A sentence-long description of the rule</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>severity</td>
+<td>enum</td>
+<td>One of <code>high</code>, <code>medium</code>, <code>low</code></td>
+<td><code>high</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>Whether this rule should be applied when run in Magpie</td>
+<td><code>true</code></td>
+<td>optional, default to true</td>
+</tr>
+<tr>
+<td>sql</td>
+<td>SQL string</td>
+<td>A sql query that returns assets that violate this policy</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>eval</td>
+<td>Python code</td>
+<td>Python code that performs additional processing on the returned SQL results</td>
+<td></td>
+<td>optional</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>Version number for the rule</td>
+<td><code>0.9</code></td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rule-naming">Rule naming</h3>
+<p>TODO: <a href="https://github.com/openraven/security-rules/wiki/policies-and-rules/policy-and-rule-ids.md">Rule naming authorities and the RuleID field</a></p>
+<h3 id="sql-schema-and-queries">SQL Schema and Queries</h3>
+<p>Magpie rules require SQL queries (unless the rule is is set to be a manual control).  These SQL queries are always executed against the PostgreSQL service where assets are persisted during the discovery phase.  PostgreSQL is the only database supported by Magpie and as such rules can use PG specific query features (such as https://www.postgresql.org/docs/13/functions-json.html).</p>
+<p>Rules should not modify the database, but checks are currently done to ensure this. As such only consume rules from trusted sources.</p>
+<p>The current schema is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td><code>varchar(59) primary key</code></td>
+<td></td>
+</tr>
+<tr>
+<td>asset_id</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>resource_name</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>resource_id</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>resource_type</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>region</td>
+<td><code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>project_id</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>account_id</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>created_iso</td>
+<td><code>timestamp with time zone</code></td>
+<td></td>
+</tr>
+<tr>
+<td>updated_iso</td>
+<td><code>timestamp with time zone</code></td>
+<td></td>
+</tr>
+<tr>
+<td>discovery_session_id</td>
+<td><code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>max_size_in_bytes</td>
+<td><code>integer</code></td>
+<td></td>
+</tr>
+<tr>
+<td>size_in_bytes</td>
+<td><code>integer</code></td>
+<td></td>
+</tr>
+<tr>
+<td>configuration</td>
+<td><code>jsonb</code></td>
+<td></td>
+</tr>
+<tr>
+<td>supplementary_configuration</td>
+<td><code>jsonb</code></td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td><code>jsonb</code></td>
+<td></td>
+</tr>
+<tr>
+<td>discovery_meta</td>
+<td><code>jsonb</code></td>
+<td></td>
+</tr>
+<tr>
+<td>### Python for Advanced Rules</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TODO</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing-security-rules">Testing security rules</h2>
+<h3 id="structure">Structure</h3>
+<p>Security rules could be tested using prepared tests assets which reproduce scenario violation see the <code>security-rules/resources/tests</code>
+Each tests consists of
+* <em>ruleId</em> : matching test assets to the specific rule, relation is always one-to-one
+* <em>description</em> : about how the test scenario prepared and why it violates the rule
+* <em>violatedAssetId</em> : expected violated assed being returned by specified rule
+* <em>controlAssetId</em> : asset which pass the rule
+* <em>insecureAssetGroup</em> : list of assets in JSON format which simulate <em>insecure</em> environment from rule perspective
+* <em>secureAssetGroup</em> : list of assets in JSON format which simulate <em>secure</em> environment from rule perspective
+Rules logic mostly relies on relation between assets, hence specified rule will be executed against provided assets</p>
+<h3 id="creating-test-resource">Creating test resource</h3>
+<ol>
+<li>grab the required assets type by magpie-discovery. You could use magpie-quickrun, enable json and postgres output</li>
+<li>redirect JSON formatted assets from the error output to the file, ensure discovery assets are also persisted in DB</li>
+<li>execute the rule SQL against the DB, discovered asset_id is the one which violated the rule, and should be filled under the field <em>violatedAssetId</em> in related test resource</li>
+<li>find the asset definition in the output file from the point 2, save it to the <em>insecureAssetGroup</em> list. In case if there a graph of assets which takes part in violation save them all</li>
+<li>check the DB for other assets related to the same rule which pass it. Them should be saved under the <em>secureAssetGroup</em> list. </li>
+<li>put the safe assetId under the test resource field <em>controlAssetId</em> . Which will point further to safe asset setup</li>
+</ol>
+<h3 id="execution">Execution</h3>
+<p>Test scenario for security rules resides in magpie. (Search in magpie repository for SecurityRuleValidator class).
+We use Junit5 Parameterized tests, were testcase is executed for each provided test resource file
+Shortly test perform the following:
+* getting the security-rules repo, and build stream of testresource files
+* load policies with rules
+* foreach test resource file:
+  - get the referenced rule from test resource file
+  - insert insecure asset group to testcontainer DB
+  - execute rule against assets, and ensure expected violated asset returned
+  - cleanup DB
+  - execute secure group of assets
+  - execute rule once again, no assets should be returned violating the rule</p>
+<p>Developer able to run the testcase in following modes:
+* using local repo specifying the parameter <code>-Drepository=&lt;absolute-path-to-local-git-repo&gt;</code> - execute all tests in repository. Useful for the full scope testing on branch level and playing with assets definition.
+* using local test-resource path specifying the parameter <code>-DtestResourcePath=&lt;absolute-path-to-resource&gt;</code> - execute all tests in folder or a single test if provided path is file. Useful for single rule testing or current list of rules in terms of their development to not waste time for full scope testing.
+* default execution without any parameters - checkout the master branch of <code>security-rules</code> repo and execute it</p>
+<h3 id="build">Build</h3>
+<p>Security-rules testing is triggered on each PR and merge to master for security-rules and magpie repo.</p>
+<h2 id="how-to-guides-for-fixing-cloud-security-issues">How-to guides for fixing cloud security issues</h2>
+<ul>
+<li><a href="https://github.com/openraven/security-rules/wiki/aws-remediation">AWS - Amazon Web Services</a></li>
+<li><a href="https://github.com/openraven/security-rules/wiki/gcp-remediation">GCP - Google Cloud Platform</a></li>
+</ul>
+<p>Additional help and information is available on the <a href="https://www.openraven.com/research">Open Raven research</a> site including screencasts and videos covering these topics and more.</p>
+<p>We encourage people to join our public <a href="https://join.slack.com/t/open-raven-research/shared_invite/zt-np27xiev-N5rL4AcTmrQt8YkE81BIaw">Slack channel</a> to follow development and ask questions.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

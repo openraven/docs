@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://opensource.openraven.com/Configuration%20Guides/aws/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Aws - Open Raven Open Source</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Open Raven Open Source</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../apache-license/" class="nav-link">Apache license</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../contribution-guide/" class="nav-link">Contribution guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../security-policy/" class="nav-link">Security policy</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Active Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Magpie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/Policy-and-Rules-Identifiers/" class="dropdown-item">Policy and Rules Identifiers</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/configuration/" class="dropdown-item">Configuration</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/dmap-extension/" class="dropdown-item">Dmap extension</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/rules-writing/" class="dropdown-item">Rules writing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Mockingbird</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Active%20Projects/Mockingbird/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configuration Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../aws-security/" class="dropdown-item">Aws security</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Aws</a>
+</li>
+                                    
+<li>
+    <a href="../cloud-taxonomy/" class="dropdown-item">Cloud taxonomy</a>
+</li>
+                                    
+<li>
+    <a href="../gcp/" class="dropdown-item">Gcp</a>
+</li>
+                                    
+<li>
+    <a href="../guides/" class="dropdown-item">Guides</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Docs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Developer%20Docs/GCP-discovery-plugin/" class="dropdown-item">GCP Client dependencies</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/aws-service-discovery/" class="dropdown-item">Aws service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/gcp-service-discovery/" class="dropdown-item">Gcp service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/magpie-for-developers/" class="dropdown-item">Magpie for developers</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/welcome/" class="dropdown-item">Welcome</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../aws-security/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../cloud-taxonomy/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#identity-and-access-management" class="nav-link">Identity and Access Management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#logging" class="nav-link">Logging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monitoring" class="nav-link">Monitoring</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#networking" class="nav-link">Networking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#other-rules" class="nav-link">Other Rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>The documentation that follows provides guidance on how to remediate any security issues flagged by the Open Raven platform. You can find more information on rules and remediation via the <a href="https://d1.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf">AWS CIS Benchmark</a> document. Most of the rules below include a number (i.e., "1.1," "2.2," etc.) for easy reference to this AWS CIS Benchmark document.</p>
+<h1 id="identity-and-access-management"><strong>Identity and Access Management</strong></h1>
+<p><strong>Avoid the use of the "root" account (1.1)</strong></p>
+<p>The "root" account has unrestricted access to all resources in the AWS account.</p>
+<p>It is recommended that the use of this account be avoided.</p>
+<p><strong>Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password (1.2)</strong></p>
+<p>Multi-Factor Authentication (MFA) adds an extra layer of protection on top of a username and password. With MFA enabled, when a user signs in to an AWS website, they will not only be prompted to enter their username and password but also an authentication code from their AWS linked MFA device.</p>
+<p>It is recommended that MFA be enabled for all accounts that have a console password.</p>
+<p>Perform the following to enable MFA via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation pane, click on <em>Users</em>.</p>
+<p><strong>Step 3.</strong> In the "User Name" list, choose the name of the intended MFA user.</p>
+<p><strong>Step 4.</strong> Select the "Security Credentials" tab, and then click on <em>Manage MFA Device</em>.</p>
+<p><strong>Step 5.</strong> In the "Manage MFA Device" wizard, click on <em>A virtual MFA device</em>, and then click on <em>Next Step</em>.</p>
+<p><strong>Ensure credentials unused for 90 days or greater are disabled (1.3)</strong></p>
+<p>AWS IAM users can access AWS resources using different types of credentials, such as passwords or access keys.</p>
+<p>It is recommended that all credentials that have been unused for 90 or more days be removed or deactivated.</p>
+<p>Perform the following to remove or deactivate credentials via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Services</em>.</p>
+<p><strong>Step 3.</strong> Click on <em>IAM.</em></p>
+<p><strong>Step 4.</strong> Click on <em>Users.</em></p>
+<p><strong>Step 5.</strong> Click on <em>Security Credentials.</em></p>
+<p><strong>Step 6.</strong> As an Administrator, click on <em>Make Inactive</em> for credentials that have not been used in 90 Days.</p>
+<p>As an IAM User, click on <em>Make Inactive</em> or <em>Delete</em> for credentials that have not been used in 90 days.</p>
+<p><strong>Ensure access keys are rotated every 90 days or less (1.4)</strong></p>
+<p>Access keys consist of an access key ID and a secret access key, which are used together to sign programmatic requests that you make to AWS.</p>
+<p>AWS users need their own access keys to make programmatic calls to AWS from the AWS Command Line Interface (AWS CLI), Tools for Windows PowerShell, the AWS SDKs, or direct HTTP calls using the APIs for individual AWS services.</p>
+<p>It is recommended that all access keys be regularly rotated.</p>
+<p>Perform the following to rotate access keys via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Services.</em></p>
+<p><strong>Step 3.</strong> Click on <em>IAM.</em></p>
+<p><strong>Step 4.</strong> Click on <em>Users.</em></p>
+<p><strong>Step 5.</strong> Click on <em>Security Credentials.</em></p>
+<p><strong>Step 6.</strong> As an Administrator, click on <em>Make Inactive</em> for keys that have not been rotated in 90 Days.</p>
+<p>As an IAM User, click on <em>Make Inactive</em> or <em>Delete</em> for keys that have not been rotated or used in 90 Days.</p>
+<p><strong>Step 7.</strong> Click on <em>Create Access Key.</em></p>
+<p><strong>Step 9.</strong> Update programmatic call with new Access Key credentials.</p>
+<p>Perform the following to rotate access keys via CLI:</p>
+<p>Run the following command:</p>
+<p>aws iam update-access-key aws iam create-access-key aws iam delete-access-key</p>
+<p><strong>Password complexity (1.5 to 1.11)</strong></p>
+<p>Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure that passwords comprise different character sets.</p>
+<p>It is strongly recommended that your organization's password policy:</p>
+<ul>
+<li>Requires at least one uppercase letter (1.5)</li>
+<li>Requires at least one lowercase letter (1.6)</li>
+<li>Requires at least one symbol (1.7)</li>
+<li>Requires at least one number (1.8)</li>
+<li>Requires a minimum password length of 14 characters (1.9)</li>
+<li>Prevents password reuse (1.10)</li>
+<li>Expires after 90 days or less (1.11)</li>
+</ul>
+<p>Perform the following to set the password policy to follow the rules above via the AWS management console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a> (with appropriate permissions to View Identity Access Management Account Settings).</p>
+<p><strong>Step 2.</strong> Go to "IAM Service" on the AWS Console.</p>
+<p><strong>Step 3.</strong> Click on <em>Account Settings</em> on the left pane.</p>
+<p><strong>Step 4.</strong></p>
+<p><em><strong>a) To set at least one uppercase letter</strong></em></p>
+<p>Check "Requires at least one uppercase letter" and click on <em>Apply Password Policy</em>.</p>
+<p><em><strong>b) To require at least one lowercase letter</strong></em></p>
+<p>Check "Requires at least one lowercase letter" and click on <em>Apply Password Policy</em>.</p>
+<p><em><strong>c) To require at least one symbol</strong></em></p>
+<p>Check "Require at least one non-alphanumeric character" and click on <em>Apply Password Policy</em>.</p>
+<p><em><strong>d) To require at least one number</strong></em></p>
+<p>Check "Require at least one number" and click on <em>Apply Password Policy</em>.</p>
+<p><em><strong>e) To set a minimum password length of 14 characters</strong></em></p>
+<p>Set "Minimum password length" to 14 or greater and click on <em>Apply Password Policy</em>.</p>
+<p><em><strong>f) To prevent password reuse</strong></em></p>
+<p>Check "Prevent password reuse" and set "Number of passwords to remember" to 24.</p>
+<p><em><strong>g) To expire passwords after 90 days</strong></em></p>
+<p>Check "Enable password expiration" and set "Password expiration period (in days)" to 90 or less.</p>
+<p>Perform the following to set the password policy to follow the rules above via CLI:</p>
+<p><strong>a) To set at least one uppercase letter</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --require-uppercase-characters </p>
+<p><strong>b) To require at least one lowercase letter</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --require-lowercase-characters</p>
+<p><strong>c) To require at least one symbol</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --require-symbols</p>
+<p><strong>d) To require at least one number</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --require-numbers </p>
+<p><strong>e) To set a minimum length of 14 characters</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --minimum-password-length 14 </p>
+<p><strong>f) To prevent password reuse</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --password-reuse-prevention 24</p>
+<p><strong>g) To expire passwords after 90 days</strong></p>
+<p>Run the following command:</p>
+<p>aws iam update-account-password-policy --max-password-age 90 </p>
+<p><strong><em>Note:</em></strong> All commands starting with "aws iam update-account-password-policy" have to be combined into a single command in order for all of them to take effect.</p>
+<p><strong>Ensure no root account access key exists (1.12)</strong></p>
+<p>The root account is the most privileged user in an AWS account. AWS Access Keys provide programmatic access to a given AWS account.</p>
+<p>It is recommended that all access keys associated with the root account be removed.</p>
+<p>Perform the following to remove access keys associated with the root account via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console as Root and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong>Step 2.</strong> Click on \&lt;Root_Account_Name> at the top right and select <em>Security Credentials</em> from the drop-down list.</p>
+<p><strong>Step 3.</strong> On the pop-out screen, click on <em>Continue to Security Credentials.</em></p>
+<p><strong>Step 4.</strong> Click on <em>Access Keys</em> (Access Key ID and Secret Access Key).</p>
+<p><strong>Step 5.</strong> Under the "Status" column, if there are any Keys that are Active:</p>
+<ul>
+<li>Click on <em>Make Inactive</em> (i.e., temporarily disable Key if you think you may need it again).</li>
+<li>Click <em>Delete</em> (i.e., delete the key for good. Deleted keys <strong>cannot be recovered</strong> ).</li>
+</ul>
+<p><strong>MFA for the root account (1.13 and 1.14)</strong></p>
+<p>The root account is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a username and password used to access this account.</p>
+<p>With MFA enabled, when a user signs in to an AWS website, they will be prompted for their username and password as well as for an authentication code from their AWS MFA device.</p>
+<p>For Level 2, it is recommended that the root account be protected with a hardware MFA.</p>
+<p>Perform the following to establish virtual MFA/hardware MFA for the root account via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong><em>Note:</em></strong> To manage MFA devices for the root AWS account, you must use your root account credentials to sign in to AWS. You cannot manage MFA devices for the root account using other credentials.</p>
+<p><strong>Step 2.</strong> Click on <em>Dashboard</em>, and under "Security Status" expand "Activate MFA" on your root account.</p>
+<p><strong>Step 3.</strong> Click on <em>Activate MFA.</em></p>
+<p><strong>Step 4.</strong></p>
+<p><strong>a) Virtual MFA</strong></p>
+<p>In the wizard, click on <em>A virtual MFA device</em> and then click on <em>Next Step.</em></p>
+<p><strong>b) Hardware MFA</strong></p>
+<p>In the wizard, click on <em>A hardware MFA device</em> and then click on <em>Next Step</em>.</p>
+<p><strong>Step 5.</strong></p>
+<p><strong>a) Virtual MFA</strong></p>
+<p>IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic. The graphic is a representation of the "secret configuration key" that is available for manual entry on devices that do not support QR codes.</p>
+<p><strong>b) Hardware MFA</strong></p>
+<p>In the "Serial Number" box, enter the serial number found on the back of the MFA device.</p>
+<p><strong>Step 6.</strong></p>
+<p><strong>a) Virtual MFA</strong></p>
+<p>Open your virtual MFA application. For a list of apps that you can use for hosting virtual MFA devices, see "Virtual MFA Applications." If the virtual MFA application supports multiple accounts (multiple virtual MFA devices), choose the option to create a new account (a new virtual MFA device).</p>
+<p><strong>b) Hardware MFA</strong></p>
+<p>In the "Authentication Code 1" box, enter the six-digit number displayed by the MFA device. You might need to press the button on the front of the device to display the number. Wait 30 seconds while the device refreshes the code, and then enter the next six-digit number into the "Authentication Code 2" box. You might need to press the button on the front of the device again to display the second number.</p>
+<p><strong>Step 7.</strong></p>
+<p><strong>a) Virtual MFA</strong></p>
+<p>Determine whether the MFA app supports QR codes, and then do one of the following:</p>
+<ul>
+<li>Use the app to scan the QR code. For example, you might choose the camera icon or choose an option similar to Scan code. Then, use the device's camera to scan the code.</li>
+<li>In the "Manage MFA Device" wizard, click on <em>Show secret key</em> for manual configuration. Then, type the secret configuration key into your MFA application. When you are finished, the virtual MFA device starts generating one-time passwords. Now, a) Go to the "Manage MFA Device" wizard, b) In the "Authentication Code 1" box, type the one time password that currently appears in the virtual MFA device, c) Wait up to 30 seconds for the device to generate a new one-time password, d) Type the second one-time password into the "Authentication Code 2" box, d) Choose <em>Active Virtual MFA</em>.</li>
+</ul>
+<p><strong>b) Hardware MFA</strong></p>
+<p>Click on <em>Next Step</em>. The MFA device is now associated with the AWS account. The next time you use your AWS account credentials to sign in, you will need to type in a code from the hardware MFA device.</p>
+<p><strong>Ensure security questions are registered in the AWS account (1.15)</strong></p>
+<p>The AWS support portal allows account owners to establish security questions that can be used to authenticate individuals calling AWS customer service for support.</p>
+<p>It is recommended that security questions be established.</p>
+<p>Perform the following to register security questions in the AWS account via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a> as a root user.</p>
+<p><strong>Step 2.</strong> Click on the \&lt;Root_Account_Name> from the top right of the console.</p>
+<p><strong>Step 3.</strong> From the drop-down menu, click <em>My Account.</em></p>
+<p><strong>Step 4.</strong> Scroll down to the "Configure Security Questions" section and click on <em>Edit.</em></p>
+<p><strong>Step 5.</strong> Click on each Question</p>
+<ul>
+<li>From the drop-down menu, select an appropriate question.</li>
+<li>Click on the <em>Answer</em> section.</li>
+<li>Enter an appropriate answer.</li>
+</ul>
+<p>Follow this process for all three questions.</p>
+<p><strong>Step 6.</strong> Click <em>Update</em> when complete.</p>
+<p><strong>Step 7.</strong> Store the security questions and answers in a secure physical location.</p>
+<p><strong>Ensure IAM policies are attached only to groups or roles (1.16)</strong></p>
+<p>By default, IAM users, groups, and roles have no access to AWS resources. IAM policies allow certain privileges to be granted to users, groups, or roles.</p>
+<p>It is recommended that IAM policies be applied directly to groups and roles but not users.</p>
+<p>Perform the following to create an IAM group and assign a policy to it via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation pane, click on <em>Groups</em> and then click on <em>Create New Group</em>.</p>
+<p><strong>Step 3.</strong> In the "Group Name" box, type the name of the group and then click on <em>Next Step.</em></p>
+<p><strong>Step 4.</strong> In the list of policies, select the checkbox for each policy that you want to apply to all members of the group. Then click on <em>Next Step</em>.</p>
+<p><strong>Step 5.</strong> Click on <em>Create Group</em>.</p>
+<p><strong>Step 6.</strong> Perform the following to add a user to a given group:</p>
+<ul>
+<li>Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</li>
+<li>In the navigation pane, click on <em>Groups</em>.</li>
+<li>Select the group you want to add a user to.</li>
+<li>Click on <em>Add Users To Group.</em></li>
+<li>Select the users to be added to the group.</li>
+<li>Click on <em>Add Users.</em></li>
+</ul>
+<p><strong>Step 7.</strong> Perform the following to remove a direct association between a user and policy:</p>
+<ul>
+<li>Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</li>
+<li>In the left navigation pane, click on <em>Users.</em></li>
+<li>For each user, a) Select the user, b) Select the "Permissions" tab, c) Expand "Managed Policies" d) Click on <em>Detach Policy</em> for each policy, e) Expand "Inline Policies," f) Click on <em>Remove Policy</em> for each policy.</li>
+</ul>
+<p><strong>Maintain current contact details (1.17)</strong></p>
+<p>Ensure email and telephone details for AWS accounts are current and map to <strong>more than one individual</strong> in your organization.</p>
+<p>AWS will use these details to contact the account owner if any activity is judged to be in breach of the Acceptable Use Policy or determined to be indicative of likely security compromise by the AWS Abuse team.</p>
+<p>Since an AWS account supports a number of contact details, it is strongly recommended that organizations maintain contact details for more than just a single individual. This is because circumstances may arise where that individual is unavailable.</p>
+<p>Email contact details should point to a mail alias that forwards emails to multiple individuals within the organization. Where feasible, phone contact details should point to a PBX hunt group or another call-forwarding system.</p>
+<p>This activity can only be performed via the AWS Console, with a user who has permission to read and write Billing information (aws-portal:*Billing ):</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the Billing and Cost Management console at <a href="https://console.aws.amazon.com/billing/home#/">https://console.aws.amazon.com/billing/home#/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation bar, choose your account name, and then click on <em>My Account</em>.</p>
+<p><strong>Step 3.</strong> On the "Account Settings" page, next to "Account Settings" click on <em>Edit</em>.</p>
+<p><strong>Step 4.</strong> Next to the field that you need to update, click on <em>Edit</em>.</p>
+<p><strong>Step 5.</strong> After you have entered your changes, click on <em>Save changes</em>.</p>
+<p><strong>Step 6.</strong> After you have made your changes, click on <em>Done</em>.</p>
+<p><strong>Step 7.</strong> To edit your contact information, under "Contact Information" click on <em>Edit</em>.</p>
+<p><strong>Step 8.</strong> For the fields that you want to change, type your updated information, and then click on <em>Update</em>.</p>
+<p><strong>Ensure security contact information is registered (1.18)</strong></p>
+<p>AWS gives customers the option to specify contact information for the account's security team. It is recommended that this information be provided.</p>
+<p>Perform the following to establish security contact information via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 2.</strong> Click on your account name at the top right corner of the console.</p>
+<p><strong>Step 3.</strong> From the drop-down menu, click on <em>My Account</em>.</p>
+<p><strong>Step 4.</strong> Scroll down to the "Alternate Contacts" section.</p>
+<p><strong>Step 5.</strong> Enter the contact information in the "Security" section.</p>
+<p><strong><em>Note:</em></strong> Consider specifying an internal email distribution list to ensure emails are regularly monitored by more than one individual.</p>
+<p><strong>Ensure IAM instance roles are used for AWS resource access from instances (1.19)</strong></p>
+<p>AWS access from within AWS instances can be done either by:</p>
+<ol>
+<li>Encoding AWS keys into AWS API calls, or</li>
+<li>Assigning the instance to a role that has an appropriate permissions policy for the required access.</li>
+</ol>
+<p>"AWS Access" means accessing the APIs of AWS in order to access AWS resources or manage AWS account resources.</p>
+<p>IAM roles can only be associated at the launch of an instance. To remediate an instance and add it to a role, you must create a new instance.</p>
+<p>If the instance has no external dependencies on its current private IP or if public addresses are elastic IPs, via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> In AWS IAM, create a new role. Assign a permissions policy if the needed permissions are already known.</p>
+<p><strong>Step 2.</strong> In the AWS console, launch a new instance with identical settings to the existing instance, and ensure that the newly created role is selected.</p>
+<p><strong>Step 3.</strong> Shut down both the existing instance and the new instance.</p>
+<p><strong>Step 4.</strong> Detach disks from both instances.</p>
+<p><strong>Step 5.</strong> Attach the existing instance disks to the new instance.</p>
+<p><strong>Step 6.</strong> Boot the new instance and you should have the same machine, but with the associated role.</p>
+<p><strong><em>Note 1:</em></strong> If your environment has dependencies on a dynamically assigned PRIVATE IP address, you can create an AMI from the existing instance and destroy the old one. Then, when launching from the AMI, manually assign the previous private IP address.</p>
+<p><strong><em>Note 2:</em></strong> If your environment has dependencies on a dynamically assigned PUBLIC IP address, there is no way to ensure the address is retained and assign it an instance role. Dependencies on dynamically assigned public IP addresses are a bad practice. If possible, you may wish to rebuild the instance with a new elastic IP address and make the investment to remediate affected systems while assigning the system to a role.</p>
+<p><strong>Ensure a support role has been created to manage incidents with AWS Support (1.20)</strong></p>
+<p>AWS provides a support center that can be used for incident notification and response, as well as technical support and customer service. Create an IAM Role to allow authorized users to manage incidents with AWS Support.</p>
+<p>To create a support role to manage incidents with AWS support, use the Amazon unified command-line interface and perform the following:</p>
+<p><strong>Step 1.</strong> Create a trust relationship policy document that allows \&lt;iam_user> to manage AWS incidents, and save it locally as /tmp/TrustPolicy.json: { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::321859670049:root" }, "Action": "sts:AssumeRole" } ] }</p>
+<p><strong>Step 2.</strong> Create the IAM role using the above trust policy: aws iam create-role --role-name \&lt;aws_support_iam_role> --assume-rolepolicy-document file:///tmp/TrustPolicy.json</p>
+<p><strong>Step 3.</strong> Attach 'AWSSupportAccess' managed policy to the created IAM role: aws iam attach-role-policy --policy-arn \&lt;iam_policy_arn> --role-name \&lt;aws_support_iam_role></p>
+<p><strong>Do not set up access keys during initial user setup for all IAM users that have a console password (1.21)</strong></p>
+<p>AWS console marks the checkbox for creating access keys enabled by default. This results in many access keys being generated unnecessarily. In addition to unnecessary credentials, this also generates unnecessary management work when it comes to auditing and rotating these keys.</p>
+<p>Perform the following to delete access keys that do not pass the audit via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Services</em>.</p>
+<p><strong>Step 3.</strong> Click on <em>IAM.</em></p>
+<p><strong>Step 4.</strong> Click on <em>Users.</em></p>
+<p><strong>Step 5.</strong> Click on <em>Security Credentials.</em></p>
+<p><strong>Step 6.</strong> As an Administrator, click on <em>Delete</em> for keys that were created at the same time as the user profile but have not been used.</p>
+<p>As an IAM User, click on <em>Delete</em> for keys that were created at the same time as the user profile but have not been used.</p>
+<p>Perform the following to delete access keys that do not pass the audit via CLI:</p>
+<p>Run the following command:</p>
+<p>iam delete-access-key</p>
+<p><strong>Ensure IAM policies that allow full administrative privileges are not created (1.22)</strong></p>
+<p>IAM policies are the means by which privileges are granted to users, groups, or roles.</p>
+<p>It is recommended and considered standard security advice to grant these based on the principle of least privilege. In other words, organizations should never grant users, groups, or roles permissions beyond the minimum required to perform a particular task.</p>
+<p>Determine what users need to do and then craft policies that let the users perform only those tasks instead of allowing full administrative privileges.</p>
+<p>Perform the following to detach the policy that grants full administrative privileges from users via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation pane, click on <em>Policies</em> and then search for the policy name found in the audit step.</p>
+<p><strong>Step 3.</strong> Select the policy that needs to be deleted.</p>
+<p><strong>Step 4.</strong> In the policy action menu, click on <em>Detach</em>.</p>
+<p><strong>Step 5.</strong> Select all Users, Groups, and Roles that have this policy attached.</p>
+<p><strong>Step 6.</strong> Click on <em>Detach Policy</em>.</p>
+<p><strong>Step 7.</strong> In the policy action menu, click on <em>Detach.</em></p>
+<p>Perform the following to detach the policy that grants full administrative privileges from users via the CLI:</p>
+<p><strong>Step 1.</strong> Lists all IAM users, groups, and roles that the specified managed policy is attached to. aws iam list-entities-for-policy --policy-arn \&lt;policy_arn> </p>
+<p><strong>Step 2.</strong> Detach the policy from all IAM Users: aws iam detach-user-policy --user-name \&lt;iam_user> --policy-arn \&lt;policy_arn> </p>
+<p><strong>Step 3.</strong> Detach the policy from all IAM Groups: aws iam detach-group-policy --group-name \&lt;iam_group> --policy-arn \&lt;policy_arn> </p>
+<p><strong>Step 4.</strong> Detach the policy from all IAM Roles: aws iam detach-role-policy --role-name \&lt;iam_role> --policy-arn \&lt;policy_arn></p>
+<h1 id="logging"><strong>Logging</strong></h1>
+<p><strong>Ensure CloudTrail is enabled in all regions (2.1)</strong></p>
+<p>Perform the following to enable global (Multi-region) CloudTrail logging via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/cloudtrail">https://console.aws.amazon.com/cloudtrail</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Trails</em> on the left navigation pane.</p>
+<p><strong>Step 3.</strong> Click on <em>Get Started Now</em>, if presented:</p>
+<ul>
+<li>Click on <em>Add new trail.</em></li>
+<li>Enter a trail name in the "Trail name" box.</li>
+<li>Set the "Apply trail to all regions" option to "Yes.""</li>
+<li>Specify an S3 bucket name in the S3 bucket box.</li>
+<li>Click on <em>Create</em>.</li>
+</ul>
+<p><strong>Step 4.</strong> If one or more trails already exist, select the target trail to enable global logging.</p>
+<p><strong>Step 5.</strong> Select the edit icon (pencil) next to "Apply trail to all regions," click on <em>Yes</em> and then click on <em>Save</em>.</p>
+<p><strong>Step 6.</strong> Select the edit icon (pencil) next to "Management Events," click on <em>All</em> for setting "Read/Write Events," and then click on <em>Save</em>.</p>
+<p>Perform the following to enable global (Multi-region) CloudTrail logging via CLI:</p>
+<p>Run the following command: </p>
+<p>aws cloudtrail create-trail --name \&lt;trail_name> --bucket-name \&lt;s3_bucket_for_cloudtrail> --is-multi-region-trail aws cloudtrail update-trail --name \&lt;trail_name> --is-multi-region-trail </p>
+<p><strong><em>Note:</em></strong> Creating CloudTrail via CLI without providing any overriding options configures Management Events to set All types of Read/Writes by default.</p>
+<p><strong>Ensure CloudTrail log file validation is enabled (2.2)</strong></p>
+<p>CloudTrail log file validation creates a digitally signed digest file containing a hash of each log that CloudTrail writes to S3. These digest files can be used to determine whether a log file was changed, deleted, or unchanged after CloudTrail delivered the log.</p>
+<p>It is recommended that file validation be enabled on all CloudTrails.</p>
+<p>Perform the following to enable log file validation on a given trail via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/cloudtrail">https://console.aws.amazon.com/cloudtrail</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Trails</em> on the left navigation pane.</p>
+<p><strong>Step 3.</strong> Click on the target trail.</p>
+<p><strong>Step 4.</strong> Within the S3 section, click on the edit icon (pencil).</p>
+<p><strong>Step 5.</strong> Click on <em>Advanced</em></p>
+<p><strong>Step 6.</strong> Click on the <em>Yes</em> radio button in the section "Enable log file validation."</p>
+<p><strong>Step 7.</strong> Click on <em>Save.</em></p>
+<p>Perform the following to enable log file validation on a given trail via CLI:</p>
+<p>Run the following command:</p>
+<p>aws cloudtrail update-trail --name \&lt;trail_name> --enable-log-file-validation </p>
+<p><strong><em>Note:</em></strong> Periodic validation of logs using these digests can be performed by running the following command: aws cloudtrail validate-logs --trail-arn \&lt;trail_arn> --start-time \&lt;start_time> --end-time \&lt;end_time></p>
+<p><strong>Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible (2.3)</strong></p>
+<p>CloudTrail logs a record of every API call made in your AWS account. These logs are stored in an S3 bucket.</p>
+<p>It is recommended that the bucket policy, or access control list (ACL), is applied to the S3 bucket that CloudTrail logs to prevent public access to the CloudTrail logs.</p>
+<p>Perform the following to remove any public access that has been granted to the bucket via an ACL or S3 bucket policy via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Go to the Amazon S3 console at <a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a>.</p>
+<p><strong>Step 2.</strong> Right-click on the bucket and click on <em>Properties.</em></p>
+<p><strong>Step 3.</strong> In the "Properties" pane, click on the <em>Permissions</em> tab. The tab shows a list of permissions granted, with one row per permission granted, in the bucket ACL. Each row identifies the grantee and the permissions granted.</p>
+<p><strong>Step 4.</strong> Select the row that grants permission to "Everyone" or "Any Authenticated User."</p>
+<p><strong>Step 5.</strong> Uncheck all the permissions granted to "Everyone" or "Any Authenticated User" (click on <em>x</em> to delete the row).</p>
+<p><strong>Step 6.</strong> Click <em>Save</em> to save the ACL.</p>
+<p><strong>Step 7.</strong> If the "Edit bucket policy" button is present, click on it.</p>
+<p><strong>Step 8.</strong> Remove any Statement that has an Effect set to “Allow” and a Principal set to "" or {"AWS" : ""}.</p>
+<p><strong>Ensure CloudTrail trails are integrated with CloudWatch Logs (2.4)</strong></p>
+<p>AWS CloudTrail is a web service that records AWS API calls made in a given AWS account. The information recorded here includes the:</p>
+<ul>
+<li>Identity of the API caller</li>
+<li>Time of the API call</li>
+<li>Source IP address of the API caller</li>
+<li>Request parameters</li>
+<li>Response elements returned by the AWS service.</li>
+</ul>
+<p>CloudTrail uses Amazon S3 for log file storage and delivery. In addition to capturing CloudTrail logs within a specified S3 bucket for long-term analysis, real-time analysis can be performed by configuring CloudTrail to send logs to CloudWatch Logs. For a trail that is enabled in all regions within an account, CloudTrail sends log files from all regions to a CloudWatch Logs log group.</p>
+<p>It is recommended that CloudTrail logs be sent to CloudWatch Logs</p>
+<p>Perform the following to integrate CloudTrail trails with CloudWatch Logs via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the CloudTrail console at <a href="https://console.aws.amazon.com/cloudtrail/">https://console.aws.amazon.com/cloudtrail/</a>.</p>
+<p><strong>Step 2.</strong> Under "All Buckets,"" click on the target bucket you want to evaluate.</p>
+<p><strong>Step 3.</strong> Click on <em>Properties</em> on the top right of the console.</p>
+<p><strong>Step 4.</strong> Click on <em>Trails</em> in the left menu.</p>
+<p><strong>Step 5.</strong> Click on each trail where no CloudWatch Logs are defined.</p>
+<p><strong>Step 6.</strong> Go to the "CloudWatch Logs" section and click on <em>Configure.</em></p>
+<p><strong>Step 7.</strong> Define a new or select an existing log group.</p>
+<p><strong>Step 8.</strong> Click on <em>Continue.</em></p>
+<p><strong>Step 9.</strong> Configure the IAM Role, which will deliver CloudTrail events to CloudWatch Logs.</p>
+<p><strong>Step 10.</strong> Create/Select an IAM Role and Policy Name.</p>
+<p><strong>Step 11.</strong> Click on <em>Allow</em> to continue.</p>
+<p>Perform the following to integrate CloudTrail trails with CloudWatch Logs via CLI:</p>
+<p>Run the following command:</p>
+<p>aws cloudtrail update-trail --name \&lt;trail_name> --cloudwatch-logs-log-grouparn \&lt;cloudtrail_log_group_arn> --cloudwatch-logs-role-arn \&lt;cloudtrail_cloudwatchLogs_role_arn></p>
+<p><strong>Ensure AWS Config is enabled in all regions (2.5)</strong></p>
+<p>AWS Config is a web service that performs configuration management of supported AWS resources within your account and delivers log files to you.</p>
+<p>The recorded information includes the:</p>
+<ul>
+<li>Configuration item (AWS resource).</li>
+<li>Relationships between configuration items (AWS resources).</li>
+<li>Any configuration changes between resources.</li>
+</ul>
+<p>It is recommended that AWS Config is enabled in all regions.</p>
+<p>Perform the following to implement AWS Config configuration via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Select the region you want to focus on in the top right of the console.</p>
+<p><strong>Step 2.</strong> Click on <em>Services.</em></p>
+<p><strong>Step 3.</strong> Click on <em>Config</em></p>
+<p><strong>Step 4.</strong> Define which resources you want to record in the selected region.</p>
+<p><strong>Step 5.</strong> Choose to include global resources (IAM resources).</p>
+<p><strong>Step 6.</strong> Specify an S3 bucket in the same account or another managed AWS account</p>
+<p><strong>Step 7.</strong> Create an SNS Topic from the same AWS account or another managed AWS account</p>
+<p>Perform the following to implement AWS Config configuration via CLI:</p>
+<p><strong>Step 1.</strong> Ensure there is an appropriate S3 bucket, SNS topic, and IAM role per the AWS Config Service prerequisites.</p>
+<p><strong>Step 2.</strong> Run this command to set up the configuration recorder aws configservice subscribe --s3-bucket my-config-bucket --sns-topic arn:aws:sns:us-east-1:012345678912:my-config-notice --iam-role arn:aws:iam::012345678912:role/myConfigRole </p>
+<p><strong>Step 3.</strong> Run this command to start the configuration recorder: start-configuration-recorder --configuration-recorder-name \&lt;value</p>
+<p><strong>Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket (2.6)</strong></p>
+<p>S3 Bucket Access Logging generates a log that contains access records for each request made to your S3 bucket.</p>
+<p>An access log record contains details about the request, such as the:</p>
+<ul>
+<li>Request type</li>
+<li>Resources specified in the request</li>
+<li>Time and date that the request was processed.</li>
+</ul>
+<p>It is recommended that bucket access logging be enabled on the CloudTrail S3 bucket.</p>
+<p>Perform the following to enable S3 bucket logging via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the S3 console at <a href="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</a>.</p>
+<p><strong>Step 2.</strong> Under "All Buckets" click on the target S3 bucket.</p>
+<p><strong>Step 3.</strong> Click on <em>Properties</em> in the top right of the console.</p>
+<p><strong>Step 4.</strong> Under Bucket: \&lt;s3_bucket_for_cloudtrail> click on <em>Logging.</em></p>
+<p><strong>Step 5.</strong> To configure bucket logging:</p>
+<ul>
+<li>Click on the <em>Enabled</em> checkbox.</li>
+<li>Select the Target Bucket from the list.</li>
+<li>Enter a Target Prefix.</li>
+<li>Click <em>Save</em>.</li>
+</ul>
+<p><strong>Ensure CloudTrail logs are encrypted at rest using KMS CMKs (2.7)</strong></p>
+<p>AWS CloudTrail is a web service that records AWS API calls for an account and makes those logs available to users and resources in accordance with IAM policies.</p>
+<p>AWS Key Management Service (KMS) is a managed service that helps create and control the encryption keys used to encrypt account data and uses Hardware Security Modules (HSMs) to protect the security of encryption keys.</p>
+<p>CloudTrail logs can be configured to leverage server-side encryption (SSE) and KMS customer-created master keys (CMK) to further protect CloudTrail logs. It is recommended that CloudTrail be configured to use SSE-KMS.</p>
+<p>Perform the following to configure CloudTrail to use SSE-KMS via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the CloudTrail console at <a href="https://console.aws.amazon.com/cloudtrail">https://console.aws.amazon.com/cloudtrail</a>.</p>
+<p><strong>Step 2.</strong> In the left navigation pane, click on <em>Trails.</em></p>
+<p><strong>Step 3.</strong> Click on a Trail.</p>
+<p><strong>Step 4.</strong> Under the S3 section, click on the edit button (pencil icon).</p>
+<p><strong>Step 5.</strong> Click on <em>Advanced</em>.</p>
+<p><strong>Step 6.</strong> Select an existing CMK from the KMS key Id drop-down menu.</p>
+<p><strong><em>Note 1:</em></strong> Ensure the CMK is located in the same region as the S3 bucket.</p>
+<p><strong><em>Note 2:</em></strong> You will need to apply a KMS Key policy on the selected CMK in order for CloudTrail as a service to encrypt and decrypt log files using the CMK provided. Steps are provided here for editing the selected CMK Key policy.</p>
+<p><strong>Step 7.</strong> Click on <em>Save</em>.</p>
+<p><strong>Step 8.</strong> You will see a notification message stating that you need to have decrypt permissions on the specified KMS key to decrypt log files.</p>
+<p><strong>Step 9.</strong> Click on <em>Yes.</em></p>
+<p>Perform the following to configure CloudTrail to use SSE-KMS via CLI</p>
+<p>Run the following command:</p>
+<p>aws cloudtrail update-trail --name \&lt;trail_name> --kms-id \&lt;cloudtrail_kms_key> aws kms put-key-policy --key-id \&lt;cloudtrail_kms_key> --policy \&lt;cloudtrail_kms_key_policy></p>
+<p><strong>Ensure rotation for customer created CMKs is enabled (2.8)</strong></p>
+<p>The AWS Key Management Service (KMS) allows customers to rotate the backing key. The backing key is key material stored within the KMS and is tied to the key ID of the Customer Created Customer Master Key (CMK). It is the backing key that is used to perform cryptographic operations such as encryption and decryption.</p>
+<p>Automated key rotation currently retains all prior backing keys so that decryption of encrypted data can take place transparently.</p>
+<p>It is recommended that CMK key rotation be enabled.</p>
+<p>Perform the following to enable customer-created CMK rotation via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log  in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam">https://console.aws.amazon.com/iam</a>.</p>
+<p><strong>Step 2.</strong> In the left navigation pane, click on <em>Encryption Keys</em>.</p>
+<p><strong>Step 3.</strong> Select a customer-created master key (CMK).</p>
+<p><strong>Step 4.</strong> Under the "Key Policy" section, move down to "Key Rotation.""</p>
+<p><strong>Step 5.</strong> Check the "Rotate this key every year" checkbox.</p>
+<p>Perform the following to enable customer-created CMK rotation via CLI:</p>
+<p>Run the following command:</p>
+<p>aws kms enable-key-rotation --key-id \&lt;kms_key_id></p>
+<p><strong>Ensure VPC flow logging is enabled in all VPCs (2.9)</strong></p>
+<p>VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. After you've created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs.</p>
+<p>It is recommended that VPC Flow Logs be enabled for packet "Rejects" for VPCs.</p>
+<p>Perform the following to determine if the VPC Flow logs feature is enabled via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Services</em> and then click on <em>VPC</em>.</p>
+<p><strong>Step 3.</strong> In the left navigation pane, click on <em>Your VPCs.</em></p>
+<p><strong>Step 4.</strong> Select a VPC.</p>
+<p><strong>Step 5.</strong> In the right pane, click on the "Flow Logs" tab.</p>
+<p><strong>Step 6.</strong> If no Flow Log exists, click on <em>Create Flow Log.</em></p>
+<p><strong>Step 7.</strong> For "Filter,"" select <em>Reject.</em></p>
+<p><strong>Step 8.</strong> Enter in a "Role" and "Destination Log Group.""</p>
+<p><strong>Step 9.</strong> Click on <em>Create Log Flow.</em></p>
+<p><strong>Step 10.</strong> Click on <em>CloudWatch Logs Group</em></p>
+<p><strong><em>Note:</em></strong> Setting the filter to "Reject" will dramatically reduce the accumulation of logging data while providing sufficient information for the purposes of breach detection, research, and remediation.</p>
+<p>However, during periods of least privilege security group engineering, setting this filter to "All" can be very helpful in discovering the existing traffic flows required for the proper operation of an already running environment.</p>
+<p>By default, CloudWatch Logs will store logs indefinitely unless a specific retention period is defined for the log group. When choosing the number of days to retain logs, keep in mind that, on average, it takes a typical organization 210 days (at the time of this writing) to realize they have been breached. Since additional time is required to research a breach, a minimum 365-day retention policy allows time for detection and research.</p>
+<p>You may also wish to archive the logs to a cheaper storage service rather than simply deleting them. See the following AWS resource to manage CloudWatch Logs retention periods: <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/SettingLogRetention.html">http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/SettingLogRetention.html</a></p>
+<h1 id="monitoring"><strong>Monitoring</strong></h1>
+<p>Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms.</p>
+<p>It is strongly recommended that a metric filter and alarm be established for detecting:</p>
+<ul>
+<li>Unauthorized API calls (3.1)</li>
+<li>Console logins that are not protected by multi-factor authentication (MFA) (3.2)</li>
+<li>Root login attempts (3.3)</li>
+<li>Changes made to Identity and Access Management (IAM) policies (3.4)</li>
+<li>Changes to CloudTrail&#39;s configurations (3.5)</li>
+<li>Failed console authentication attempts (3.6)</li>
+<li>Customer-created CMKs which have changed state to disabled or scheduled deletion (3.7)</li>
+<li>Changes to S3 buckets (3.8)</li>
+<li>Changes to AWS Config configuration (3.9)</li>
+<li>Changes made to Security Groups (<strong><em>Note:</em></strong> Security Groups are a stateful packet filter that controls ingress and egress traffic within a VPC.) (3.10)</li>
+<li>Changes made to NACLs (3.11)</li>
+<li>Changes to the network (3.12)</li>
+<li>Changes to route tables (3.13)</li>
+<li>Changes made to VPCs (<strong><em>Note:</em></strong> It is possible to have more than 1 VPC within an account. In addition, it is also possible to create a peer connection between 2 VPCs, which enables network traffic to route between VPCs) (3.14)</li>
+</ul>
+<p>Perform the following to set up the metric filter, alarm, SNS topic, and subscription via the AWS Management Console:</p>
+<p><strong>Step 1.</strong></p>
+<p><strong>a) Detect unauthorized API calls</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for unauthorized API calls and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;unauthorized_api_calls_metric> --metric-transformations metricName= \&lt;unauthorized_api_calls_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.errorCode = "UnauthorizedOperation") || ($.errorCode = "AccessDenied") }' </p>
+<p><strong>b) Detect console logins that are not protected by multi-factor authentication (MFA)</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for AWS Management Console sign-in without MFA and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;no_mfa_console_signin_metric> --metric-transformations metricName= \&lt;no_mfa_console_signin_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = "ConsoleLogin") &amp;&amp; ($.additionalEventData.MFAUsed != "Yes") }' </p>
+<p><strong>c) Detect root login attempts</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for "Root'' account usage and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;root_usage_metric> --metric-transformations metricName= \&lt;root_usage_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filterpattern '{ $.userIdentity.type = "Root" &amp;&amp; $.userIdentity.invokedBy NOT EXISTS &amp;&amp; $.eventType != "AwsServiceEvent" }' </p>
+<p><strong>d) Detect changes made to Identity and Access Management (IAM) policies</strong></p>
+<p>Create a metric filter based on filter pattern provided which checks for IAM policy changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;iam_changes_metric> --metric-transformations metricName= \&lt;iam_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 -- filter-pattern '{($.eventName=DeleteGroupPolicy)||($.eventName=DeleteRolePolicy)||($.eventNa me=DeleteUserPolicy)||($.eventName=PutGroupPolicy)||($.eventName=PutRolePolic y)||($.eventName=PutUserPolicy)||($.eventName=CreatePolicy)||($.eventName=Del etePolicy)||($.eventName=CreatePolicyVersion)||($.eventName=DeletePolicyVersi on)||($.eventName=AttachRolePolicy)||($.eventName=DetachRolePolicy)||($.event Name=AttachUserPolicy)||($.eventName=DetachUserPolicy)||($.eventName=AttachGr oupPolicy)||($.eventName=DetachGroupPolicy)}' </p>
+<p><strong>e) Detect changes to CloudTrail's configurations</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for cloudtrail configuration changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;cloudtrail_cfg_changes_metric> --metric-transformations metricName= \&lt;cloudtrail_cfg_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = CreateTrail) || ($.eventName = UpdateTrail) || ($.eventName = DeleteTrail) || ($.eventName = StartLogging) || ($.eventName = StopLogging) }' </p>
+<p><strong>f) Detect failed console authentication attempts</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for AWS management Console Login Failures and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;console_signin_failure_metric> --metric-transformations metricName= \&lt;console_signin_failure_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = ConsoleLogin) &amp;&amp; ($.errorMessage = "Failed authentication") }' </p>
+<p><strong>g) Detect customer-created CMKs which have changed state to disabled or scheduled deletion</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for disabled or scheduled for deletion CMK's and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;disable_or_delete_cmk_changes_metric> --metrictransformations metricName= \&lt;disable_or_delete_cmk_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{($.eventSource = kms.amazonaws.com) &amp;&amp; (($.eventName=DisableKey)||($.eventName=ScheduleKeyDeletion)) }' </p>
+<p><strong>h) Detect changes to S3 buckets</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for S3 bucket policy changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;s3_bucket_policy_changes_metric> --metric-transformations metricName= \&lt;s3_bucket_policy_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventSource = s3.amazonaws.com) &amp;&amp; (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }' </p>
+<p><strong>i) Detect changes to AWS Config configuration</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for AWS Configuration changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;aws_config_changes_metric> --metric-transformations metricName= \&lt;aws_config_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventSource = config.amazonaws.com) &amp;&amp; (($.eventName=StopConfigurationRecorder)||($.eventName=DeleteDeliveryChannel) ||($.eventName=PutDeliveryChannel)||($.eventName=PutConfigurationRecorder)) }' Note: You can choose your own metricName and metricNamespace strings. Using the same metricNamespace for all Foundations Benchmark metrics will group them together. </p>
+<p><strong>j) Detect changes made to Security Groups</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for security groups changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;security_group_changes_metric> --metric-transformations metricName= \&lt;security_group_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = AuthorizeSecurityGroupIngress) || ($.eventName = AuthorizeSecurityGroupEgress) || ($.eventName = RevokeSecurityGroupIngress) || ($.eventName = RevokeSecurityGroupEgress) || ($.eventName = CreateSecurityGroup) || ($.eventName = DeleteSecurityGroup) }' </p>
+<p><strong>k) Changes made to NACLs</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for NACL changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;nacl_changes_metric> --metric-transformations metricName= \&lt;nacl_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 -- filter-pattern '{ ($.eventName = CreateNetworkAcl) || ($.eventName = CreateNetworkAclEntry) || ($.eventName = DeleteNetworkAcl) || ($.eventName = DeleteNetworkAclEntry) || ($.eventName = ReplaceNetworkAclEntry) || ($.eventName = ReplaceNetworkAclAssociation) }' </p>
+<p><strong>l) Changes to the network</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for network gateways changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;network_gw_changes_metric> --metric-transformations metricName= \&lt;network_gw_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = CreateCustomerGateway) || ($.eventName = DeleteCustomerGateway) || ($.eventName = AttachInternetGateway) || ($.eventName = CreateInternetGateway) || ($.eventName = DeleteInternetGateway) || ($.eventName = DetachInternetGateway) }' </p>
+<p><strong>m) Detect changes to route tables</strong></p>
+<p>Create a metric filter based on the filter pattern provided which checks for route table changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;route_table_changes_metric> --metric-transformations metricName= \&lt;route_table_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 --filter-pattern '{ ($.eventName = CreateRoute) || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable) }'</p>
+<p><strong>n) Detect changes made to VPCs</strong></p>
+<p>Create a metric filter based on filter pattern provided which checks for VPC changes and the \&lt;cloudtrail_log_group_name> taken from audit step 1. aws logs put-metric-filter --log-group-name \&lt;cloudtrail_log_group_name> -- filter-name \&lt;vpc_changes_metric> --metric-transformations metricName= \&lt;vpc_changes_metric> ,metricNamespace='CISBenchmark',metricValue=1 -- filter-pattern '{ ($.eventName = CreateVpc) || ($.eventName = DeleteVpc) || ($.eventName = ModifyVpcAttribute) || ($.eventName = AcceptVpcPeeringConnection) || ($.eventName = CreateVpcPeeringConnection) || ($.eventName = DeleteVpcPeeringConnection) || ($.eventName = RejectVpcPeeringConnection) || ($.eventName = AttachClassicLinkVpc) || ($.eventName = DetachClassicLinkVpc) || ($.eventName = DisableVpcClassicLink) || ($.eventName = EnableVpcClassicLink) }' </p>
+<p><strong><em>Note:</em></strong> You can choose your own metricName and metricNamespace strings.</p>
+<p>Using the same metricNamespace for all Foundations Benchmark metrics will group them together.</p>
+<p><strong>Step 2.</strong> Create an SNS topic that the alarm will notify aws sns create-topic --name \&lt;sns_topic_name> </p>
+<p><strong><em>Note:</em></strong> You can execute this command once and then reuse the same topic for all monitoring alarms.</p>
+<p><strong>Step 3.</strong> Create an SNS subscription to the topic created in step 2 aws sns subscribe --topic-arn \&lt;sns_topic_arn> --protocol \&lt;protocol_for_sns> - -notification-endpoint \&lt;sns_subscription_endpoints> </p>
+<p><strong><em>Note:</em></strong> You can execute this command once and then reuse the SNS subscription for all monitoring alarms.</p>
+<p><strong>Step 4.</strong> Create an alarm that is associated with the CloudWatch Logs Metric Filter created in step 1 and an SNS topic created in step 2 aws cloudwatch put-metric-alarm --alarm-name \&lt;x1> -- metric-name \&lt;x2> --statistic Sum --period 300 --threshold 1 --comparison-operator GreaterThanOrEqualToThreshold --evaluation-periods 1 --namespace 'CISBenchmark' --alarm-actions \&lt;sns_topic_arn></p>
+<p>Depending on the rule you chose in step 1, continue with that rule now, replacing \&lt;x1> and \&lt;x2> as per either:</p>
+<p><strong>a) Detect unauthorized API calls</strong></p>
+<p>\&lt;x1> = \&lt;unauthorized_api_calls_alarm></p>
+<p>\&lt;x2> = \&lt;unauthorized_api_calls_metric></p>
+<p><strong>b) Console logins that are not protected by multi-factor authentication (MFA)</strong></p>
+<p>\&lt;x1> = \&lt;no_mfa_console_signin_alarm></p>
+<p>\&lt;x2> = \&lt;no_mfa_console_signin_metric></p>
+<p><strong>c) Detect root login attempts</strong></p>
+<p>\&lt;x1> = \&lt;root_usage_alarm></p>
+<p>\&lt;x2> = \&lt;root_usage_metric></p>
+<p><strong>d) Changes made to Identity and Access Management (IAM) policies</strong></p>
+<p>\&lt;x1> = \&lt;iam_changes_alarm></p>
+<p>\&lt;x2> = \&lt;iam_changes_metric></p>
+<p><strong>e) Changes to CloudTrail&#39;s configurations</strong></p>
+<p>\&lt;x1> = \&lt;cloudtrail_cfg_changes_alarm></p>
+<p>\&lt;x2> = \&lt;cloudtrail_cfg_changes_metric></p>
+<p><strong>f) Failed console authentication attempts</strong></p>
+<p>\&lt;x1> = \&lt;console_signin_failure_alarm></p>
+<p>\&lt;x2> = \&lt;console_signin_failure_metric></p>
+<p><strong>g) Customer-created CMKs which have changed state to disabled or scheduled deletion</strong></p>
+<p>\&lt;x1> = \&lt;disable_or_delete_cmk_changes_alarm></p>
+<p>\&lt;x2> = \&lt;disable_or_delete_cmk_changes_metric></p>
+<p><strong>h) Detect changes to S3 buckets</strong></p>
+<p>\&lt;x1> = \&lt;s3_bucket_policy_changes_alarm></p>
+<p>\&lt;x2> = \&lt;s3_bucket_policy_changes_metric></p>
+<p><strong>i) Detect changes to AWS Config configuration</strong></p>
+<p>\&lt;x1> = \&lt;aws_config_changes_alarm></p>
+<p>\&lt;x2> = \&lt;aws_config_changes_metric></p>
+<p><strong>j) Detect changes made to Security Groups</strong></p>
+<p>\&lt;x1> = \&lt;security_group_changes_alarm></p>
+<p>\&lt;x2> = \&lt;security_group_changes_metric></p>
+<p><strong>k) Changes made to NACLs</strong></p>
+<p>\&lt;x1> = \&lt;nacl_changes_alarm></p>
+<p>\&lt;x2> = \&lt;nacl_changes_metric></p>
+<p><strong>l) Changes to the network</strong></p>
+<p>\&lt;x1> = \&lt;network_gw_changes_alarm></p>
+<p>\&lt;x2> = \&lt;network_gw_changes_metric></p>
+<p><strong>m) Detect changes to route tables</strong></p>
+<p>\&lt;x1> = \&lt;route_table_changes_alarm></p>
+<p>\&lt;x2> = \&lt;route_table_changes_metric></p>
+<p><strong>n) Detect changes made to VPCs</strong></p>
+<p>\&lt;x1> = \&lt;vpc_changes_alarm> </p>
+<p>\&lt;x2> = \&lt;vpc_changes_metric></p>
+<h1 id="networking"><strong>Networking</strong></h1>
+<p><strong>Ingress access (4.1 and 4.2)</strong></p>
+<p><strong>Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389</strong></p>
+<p>Security groups provide stateful filtering of ingress/egress network traffic to AWS resources.</p>
+<p>It is recommended that no security group allows unrestricted ingress access to port 3389 and port 22.</p>
+<p>Perform the following to remove unrestricted ingress access to port 3389 and port 22 via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a></p>
+<p><strong>Step 2.</strong> In the left pane, click on <em>Security Groups</em></p>
+<p><strong>Step 3.</strong> For each security group, perform the following:</p>
+<ul>
+<li>Select the security group.</li>
+<li>Click on the <em>Inbound Rules</em> tab.</li>
+<li>Identify the rules to be removed.</li>
+<li>Click on <em>x</em> in the "Remove" column.</li>
+<li>Click on <em>Save.</em></li>
+</ul>
+<p><strong>Ensure the default security group of every VPC restricts all traffic (4.3)</strong></p>
+<p>A VPC comes with a default security group whose initial settings:</p>
+<ul>
+<li>Deny all inbound traffic</li>
+<li>Allow all outbound traffic</li>
+<li>Allow all traffic between instances assigned to the security group.</li>
+</ul>
+<p>If you don't specify a security group when you launch an instance, the instance is automatically assigned to this default security group. Security groups provide stateful filtering of ingress/egress network traffic to AWS resources.</p>
+<p>It is recommended that the default security group restrict all traffic.</p>
+<p>The default VPC in every region should have its default security group updated to comply. Any newly created VPCs will automatically contain a default security group that will need remediation to comply with this recommendation.</p>
+<p>Security group members can perform the following to implement the prescribed state via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Identify the AWS resources that exist within the default security group.</p>
+<p><strong>Step 2.</strong> Create a set of least privilege security groups for those resources.</p>
+<p><strong>Step 3.</strong> Place the resources in those security groups.</p>
+<p><strong>Step 4.</strong> Remove the resources noted in #1 from the default security group <em>Security Group State</em></p>
+<p><strong>Step 5.</strong> Log in to the AWS Management Console at <a href="https://console.aws.amazon.com/vpc/home">https://console.aws.amazon.com/vpc/home</a>.</p>
+<p><strong>Step 6.</strong> Repeat the next steps for all VPCs, including the default VPC in each AWS region.</p>
+<p><strong>Step 7.</strong> In the left pane, click on <em>Security Groups.</em></p>
+<p><strong>Step 8.</strong> For each default security group, perform the following:</p>
+<ul>
+<li>Select the default security group.</li>
+<li>Click on the <em>Inbound Rules</em> tab.</li>
+<li>Remove any inbound rules.</li>
+<li>Click on the <em>Outbound Rules</em> tab.</li>
+<li>Remove any outbound rules.</li>
+</ul>
+<p><strong>Recommended:</strong> IAM groups allow you to edit the "name" field. After remediating default groups rules for all VPCs in all regions, edit this field to add text similar to "DO NOT USE. DO NOT ADD RULES."</p>
+<p><strong>Ensure routing tables for VPC peering are "least access" (4.4)</strong></p>
+<p>Once a VPC peering connection is established, routing tables must be updated to establish any connections between the peered VPCs. These routes can be as specific as desired. You can even peer a VPC to just a single host on the other side of the connection.</p>
+<p>Remove and add route table entries to ensure that the least number of subnets or hosts is required to accomplish the purpose for peering are routable.</p>
+<p>To give VPC peering routing tables "least access" via CLI:</p>
+<p><strong>Step 1.</strong> For each \&lt;route_table_id> containing routes non compliant with your routing policy (which grants more than desired "least access"), delete the non compliant route: aws ec2 delete-route --route-table-id \&lt;route_table_id> --destination-cidrblock \&lt;non_compliant_destination_CIDR> </p>
+<p><strong>Step 2.</strong> Create a new compliant route: aws ec2 create-route --route-table-id \&lt;route_table_id> --destination-cidrblock \&lt;compliant_destination_CIDR> --vpc-peering-connection-id \&lt;peering_connection_id></p>
+<h1 id="other-rules"><strong>Other Rules</strong></h1>
+<p><strong>Ensure that GuardDuty enabled for required region</strong></p>
+<p>By enabling GuardDuty, you will receive a threat detection service. This service continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in Amazon S3 by event logs analysis.</p>
+<p>We are excluding verification for aws-global region from possible regions for GuardDuty.</p>
+<p>Perform the following steps under the below link to enable GuardDuty: <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_settingup.html">https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_settingup.html</a></p>
+<p><strong>Ensure there no stale roles with Attached Policies for S3 access</strong></p>
+<p>Avoid stale roles as these could cause access leakage and uncontrolled manipulation with S3 bucket data, which can lead to ransomware violations.</p>
+<p>This rule checks inline policies only. The Attached policies are verified under the respective rule.</p>
+<p>Perform the following to delete stale roles via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the IAM console at <a href="https://console.aws.amazon.com/iam/">https://console.aws.amazon.com/iam/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation pane of the IAM console, click on <em>Roles</em>. Then select the check box next to the role name you want to delete, not the name or row itself.</p>
+<p><strong>Step 3.</strong> For "Role actions" at the top of the page, click on <em>Delete</em>.</p>
+<p><strong>Step 4.</strong> In the confirmation dialog box, review the last accessed information to see when each of the selected roles last accessed an AWS service. This helps you to confirm whether the role is currently active. If you want to proceed, click on <em>Yes, Delete</em> to submit the service-linked role for deletion.</p>
+<p><strong>Step 5.</strong> Observe the IAM console notifications to monitor the progress of the service-linked role deletion.</p>
+<p>Because the IAM service-linked role deletion is asynchronous, after you submit the role for deletion, the deletion task can succeed or fail.</p>
+<p>If the task succeeds, then the role is removed from the list and notification of success appears at the top of the page.</p>
+<p>If the task fails, you can click on <em>View details</em> or <em>View Resources</em> from the notifications to learn why the deletion failed. If the deletion fails because the role uses the service's resources, then the notification includes a list of resources, if the service returns that information. You can then clean up the resources and submit the deletion again.</p>
+<ul>
+<li><a href="https://aws.amazon.com/blogs/security/identify-unused-iam-roles-remove-confidently-last-used-timestamp/">https://aws.amazon.com/blogs/security/identify-unused-iam-roles-remove-confidently-last-used-timestamp/</a></li>
+<li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role</a></li>
+</ul>
+<p><strong>Ensure all EC2 EBS Volumes has snapshots</strong></p>
+<p>Snapshot availability could prevent data loss and simplify data recovery in the case of data encryption.</p>
+<p>Perform the following to create snapshots for EC2 EBS Volumes via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+<p><strong>Step 2.</strong> Click on <em>Snapshots</em> under the Elastic Block Store in the navigation pane.</p>
+<p><strong>Step 3.</strong> Click on <em>Create Snapshot</em>.</p>
+<p><strong>Step 4.</strong> For "Select resource type" click on <em>Volume</em>.</p>
+<p><strong>Step 5.</strong> For "Volume,"" select the volume.</p>
+<p><strong>Step 6 (Optional).</strong> Enter a description for the snapshot.</p>
+<p><strong>Step 7 (Optional).</strong> Choose <em>Add Tag</em> to add tags to your snapshot. For each tag, provide a tag key and a tag value.</p>
+<p><strong>Step 8.</strong> Click on <em>Create Snapshot</em>.</p>
+<p><strong>Ensure all EC2 instances are managed by SSM</strong></p>
+<p>Systems Manager (SSM) helps you maintain security and compliance by scanning your managed instances and reporting on or taking corrective action on any policy violations that it detects.</p>
+<p>In cases where SSM is enabled for a specific region, but EC2 instances are not managed, they will not be monitored from any kind of SSM perspective.</p>
+<p>Perform the following to configure EC2 instances for use with SMM via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+<p><strong>Step 2.</strong> In the navigation pane, under "Instances" click on <em>Instances</em>.</p>
+<p><strong>Step 3.</strong> Navigate to and choose your EC2 instance from the list.</p>
+<p><strong>Step 4.</strong> In the "Actions" menu, click on <em>Security</em>, Modify IAM role.</p>
+<p><strong>Step 5.</strong> For the IAM role, select the instance profile you created for that perspective.</p>
+<p><strong>Ensure that SecurityHub enabled for required region</strong></p>
+<p>AWS Security Hub gives you a comprehensive view of your security alerts and security posture across your AWS accounts. SecurityHub is a cloud security posture management service that automatically checks for best security practices, bundles alerts, and automates remediation.</p>
+<p><strong>AWS security group allows access to known command and control destinations</strong></p>
+<p>The AWS security group allows access to destinations that are known or suspected of being command and control systems used in ransomware and botnet attacks.</p>
+<p>Perform the following to gain access to known command and control destinations with the minimum required connectivity via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a> and click on <em>Security Groups</em>.</p>
+<p><strong>Step 2.</strong> For each group found by this rule:</p>
+<ul>
+<li>Select the given rule.</li>
+<li>Click on the &quot;Outbound Rules&quot; tab.</li>
+<li>Click on <em>Edit outbound rules</em>.</li>
+<li>Edit any CIDR/IP addresses and minimize the permitted scope to just the minimum required for connectivity.</li>
+</ul>
+<p><strong>Ensure that S3 Bucket has MFA option enabled for changing Bucket Versioning settings and permanently deleting object versions</strong></p>
+<p>S3 Buckets should be protected from ransomware attacks by configuring versioning and MFA Delete. Doing so will disallow immediate bucket content removal, data encryption, or any other harmful modifications.</p>
+<p>Disabled versioning is also considered a violation by this rule. The reason for that is that the attacker may make the bucket vulnerable by disabling object versioning with the s3:PutBucketVersioning permission.</p>
+<p>Perform the following to enable S3 bucket versioning and MFA Delete via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the S3 console at <a href="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</a>.</p>
+<p><strong>Step 2.</strong> Under "All Buckets,"" click on the target S3 bucket.</p>
+<p><strong>Step 3.</strong> Click on the <em>Properties</em> tab.</p>
+<p><strong>Step 4.</strong> Find the "Bucket Versioning" section.</p>
+<p><strong>Step 5.</strong> Click on <em>Edit</em> and enable versioning.</p>
+<p><strong>Step 6.</strong> Follow the AWS instructions to add the MFA Delete option via CLI or SDK.</p>
+<p><strong>Ensure S3 bucket deny overriding of default KMS Key encryption</strong></p>
+<p>Attackers that have S3:PutObject permission can still override the default KMS Key encryption on updating object operation with their own provided KMS Key, thus leading to a ransomware violation.</p>
+<p>To prevent this method of malicious access, the bucket owner should therefore define a policy to allow object modification using only the defined default KMS Key, which attackers are unlikely to have permissions to change or modify.</p>
+<p>Perform the following to enable S3 bucket policy control over the KMS Key via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the S3 console at <a href="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</a>.</p>
+<p><strong>Step 2.</strong> In the Buckets list, choose the name of the bucket that you want to create a bucket policy for or whose bucket policy you want to edit.</p>
+<p><strong>Step 3.</strong> Click on <em>Permissions</em>.</p>
+<p><strong>Step 4.</strong> Under "Bucket policy,"" click on <em>Edit</em>.</p>
+<p><strong>Step 5.</strong> In the "Policy" text field, type or copy and paste a new bucket policy, or edit an existing policy.</p>
+<p>The bucket policy is a JSON file. The text you type in the editor must be valid JSON.</p>
+<p><strong>Step 6.</strong> Add policy Condition statement where you define the KMS Key to be matched for Statement with s3:PutObject permission</p>
+<p><strong>Step 7.</strong> Condition example for Allow effect for: "Condition":{"StringEquals":{"s3:x-amz-server-side-encryption-aws-kms-key-id":"arn:aws:kms:REGION:ACCOUNT-ID:key/KEY-ID"}}}</p>
+<p><strong><em>Note:</em></strong> Reference:</p>
+<p><a href="https://rhinosecuritylabs.com/aws/s3-ransomware-part-2-prevention-and-defense/#:~:text=Another%20feature%20of,be%20found%20here">https://rhinosecuritylabs.com/aws/s3-ransomware-part-2-prevention-and-defense/#:~:text=Another%20feature%20of,be%20found%20here</a>.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/add-bucket-policy.html</a></p>
+<p><a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html</a></p>
+<p><strong>Ensure that S3 Bucket restrict public access by ACL and policy</strong></p>
+<p>S3 Buckets should not be reachable outside of the project by default. Any violation of this rule could cause major vulnerabilities and data loss</p>
+<p>Perform the following to restrict public access to S3 bucket via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the S3 console at <a href="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</a>.</p>
+<p><strong>Step 2.</strong> On the left side menu, find the option "Block Public Access settings for this account.""</p>
+<p><strong>Step 3.</strong> Edit the settings and click on the required level of restriction. The option to "Block all public access" is preferable and will set it globally.</p>
+<p><strong>Step 4.</strong> Open the bucket, then open the tab "Permissions."</p>
+<p><strong>Step 5.</strong> Find the "Access control list (ACL)" part and ensure only the bucket owner has access to it.</p>
+<p><strong>Step 6.</strong> Find "Bucket policy" and check for any public configuration like "principal": * etc. </p>
+<p><strong><em>Note:</em></strong> Reference: <a href="https://docs.amazonaws.cn/en_us/AmazonS3/latest/userguide/access-control-block-public-access.html">https://docs.amazonaws.cn/en_us/AmazonS3/latest/userguide/access-control-block-public-access.html</a></p>
+<p><a href="https://aws.amazon.com/s3/features/block-public-access/">https://aws.amazon.com/s3/features/block-public-access/</a></p>
+<p><strong>Ensure S3 bucket has no server-side encryption being enabled by another account</strong></p>
+<p>S3 bucket policies allow uploaded files to be encrypted with AES256 or a specific AWS KMS key. In the case when a specified KMS Key belongs to a different account, it can lead to a high risk of data encryption without the ability to decrypt it.</p>
+<p>Perform the following to clear cross-account KMS Key on S3 via the AWS Management Console:</p>
+<p><strong>Step 1.</strong> Log in to the AWS Management Console and open the S3 console at <a href="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</a>.</p>
+<p><strong>Step 2.</strong> In the "Buckets" list, choose a bucket name.</p>
+<p><strong>Step 3.</strong> Click on <em>Properties</em>.</p>
+<p><strong>Step 4.</strong> Under "Default encryption,"" click on <em>Edit</em>.</p>
+<p><strong>Step 5.</strong> Remove the cross-account KMS Key and specify the account-related KMS Key for data encryption</p>
+<p><strong>Step 6.</strong> Consider the rule aws_058 aws_s3_prevent_default_kms_key_override.yaml remediation to prevent such violations in the future.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

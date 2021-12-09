@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://opensource.openraven.com/Configuration%20Guides/gcp/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Gcp - Open Raven Open Source</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Open Raven Open Source</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../apache-license/" class="nav-link">Apache license</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../contribution-guide/" class="nav-link">Contribution guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../security-policy/" class="nav-link">Security policy</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Active Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Magpie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/Policy-and-Rules-Identifiers/" class="dropdown-item">Policy and Rules Identifiers</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/configuration/" class="dropdown-item">Configuration</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/dmap-extension/" class="dropdown-item">Dmap extension</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+            
+<li>
+    <a href="../../Active%20Projects/Magpie/rules-writing/" class="dropdown-item">Rules writing</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Mockingbird</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Active%20Projects/Mockingbird/getting-started/" class="dropdown-item">Getting started</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Configuration Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../aws-security/" class="dropdown-item">Aws security</a>
+</li>
+                                    
+<li>
+    <a href="../aws/" class="dropdown-item">Aws</a>
+</li>
+                                    
+<li>
+    <a href="../cloud-taxonomy/" class="dropdown-item">Cloud taxonomy</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Gcp</a>
+</li>
+                                    
+<li>
+    <a href="../guides/" class="dropdown-item">Guides</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Docs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Developer%20Docs/GCP-discovery-plugin/" class="dropdown-item">GCP Client dependencies</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/aws-service-discovery/" class="dropdown-item">Aws service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/gcp-service-discovery/" class="dropdown-item">Gcp service discovery</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/magpie-for-developers/" class="dropdown-item">Magpie for developers</a>
+</li>
+                                    
+<li>
+    <a href="../../Developer%20Docs/welcome/" class="dropdown-item">Welcome</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../cloud-taxonomy/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../guides/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Ensure that instances are not configured to use the default service account</strong>
+  It is recommended to configure your instance to not use the default Compute Engine
+  service account because it has the Editor role on the project.</p>
+<p>From Console:
+    1. Go to the VM instances page by visiting:
+      https://console.cloud.google.com/compute/instances.
+    2. Click on the instance name to go to its VM instance details page.
+    3. Click STOP and then click EDIT .
+    4. Under the section Service Account , select a service account other than the default
+      Compute Engine service account. You may first need to create a new service
+      account.
+    5. Click Save and then click START .
+  From Command Line:
+    1. Stop the instance:
+      gcloud compute instances stop INSTANCE_NAME
+    2. Update the instance:
+      gcloud compute instances set-service-account INSTANCE_NAME --service-account=SERVICE_ACCOUNT
+    3. Restart the instance:
+      gcloud compute instances start INSTANCE_NAME</p>
+<p><strong>Ensure that IAM users are not assigned the Service Account User or
+  Service Account Token Creator roles at project level</strong></p>
+<p>It is recommended to assign the Service Account User (iam.serviceAccountUser) and
+  Service Account Token Creator (iam.serviceAccountTokenCreator) roles to a user for
+  a specific service account rather than assigning the role to a user at project level</p>
+<p>From Console:
+    1. Go to the IAM page in the GCP Console by visiting:
+    https://console.cloud.google.com/iam-admin/iam.
+    2. Click on the filter table text bar. Type Role: Service Account User
+    3. Click the Delete Bin icon in front of the role Service Account User for every user
+    listed as a result of a filter.
+    4. Click on the filter table text bar. Type Role: Service Account Token Creator
+    5. Click the Delete Bin icon in front of the role Service Account Token Creator for
+    every user listed as a result of a filter.
+  From Command Line:
+    1. Using a text editor, remove the bindings with the roles/iam.serviceAccountUser
+    or roles/iam.serviceAccountTokenCreator.</p>
+<pre><code>For example, you can use the iam.json file shown below as follows:
+```
+  {
+  "bindings": [
+  {
+   "members": [
+   "serviceAccount:our-project-123@appspot.gserviceaccount.com",
+   ],
+   "role": "roles/appengine.appViewer"
+  },
+  {
+   "members": [
+   "user:email1@gmail.com"
+   ],
+   "role": "roles/owner"
+   },
+  {
+   "members": [
+   "serviceAccount:our-project-123@appspot.gserviceaccount.com",
+   "serviceAccount:123456789012-compute@developer.gserviceaccount.com"
+   ],
+   "role": "roles/editor"
+  }
+  ],
+  "etag": "BwUjMhCsNvY="
+   }
+2. Update the project's IAM policy:
+gcloud projects set-iam-policy PROJECT_ID iam.json```
+</code></pre>
+<p><strong>Ensure that there are only GCP-managed service account keys for each service account</strong></p>
+<p>User managed service accounts should not have user-managed keys</p>
+<p>From Console
+    1. Go to the IAM page in the GCP Console using https://console.cloud.google.com/iam-admin/iam
+    2. In the left navigation pane, click Service accounts. All service accounts and their corresponding keys are listed.
+    3. Click the service account.
+    4. Click the edit and delete the keys.
+  From CLI To delete a user managed Service Account Key:
+    gcloud iam service-accounts keys delete --iam-account=<user-managed-service-account-EMAIL> <KEY-ID></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

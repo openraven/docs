@@ -1,10 +1,10 @@
-We welcome all contributions to our open source tools including feedback, bug reports and pull-requests. 
+We welcome contributions from everyone. If you are interesting in contributing to Magpie you should first take a look at the current team backlog [https://github.com/openraven/magpie/issues](https://github.com/openraven/magpie/issues) where you can learn about the features we are working on, planning and bugs.
 
-You should first take a look at the current team [backlog}(https://github.com/openraven/magpie/issues). Our backlog is where you can learn about all the tools and features we're working on, features we are planning , what stage they're in, and when we expect to bring them to you. It is also where you should report issues and feature requests. 
+# Contributing to Docs
+To contribute to the docs, simply clone the [https://github.com/openraven/docs](https://github.com/openraven/docs) repo and create a pull request. We build this documentation site using [https://www.mkdocs.org/](https://www.mkdocs.org/) and publish to this site using [https://readthedocs.com/](https://readthedocs.com/).
 
-## Reporting Issues
-
-* **Do not open up a GitHub issue if the bug is a security vulnerability, and instead to refer to our security policy below. 
+# Reporting Issues
+* **Please do not open up a GitHub issue if the bug is a security vulnerability, and instead to refer to our [security policy](https://github.com/openraven/docs/security-policy/).
 
 * **Ensure the bug was not already reported** by searching on GitHub under Issues for the project itself.
 * If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring if possible. 
